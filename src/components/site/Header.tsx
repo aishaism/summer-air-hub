@@ -52,7 +52,7 @@ export function Header() {
             aria-label="Toggle menu"
             className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-navy lg:hidden"
           >
-            {open ? <Menu className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
@@ -83,9 +83,6 @@ export function Header() {
           </nav>
         </div>
       )}
-      <span className="hidden">
-        <X />
-      </span>
     </header>
   );
 }
