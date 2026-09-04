@@ -182,13 +182,13 @@ function Index() {
                 ))}
               </div>
             </div>
-            <div className="relative lg:h-full lg:mr-[calc((100%-100vw)/2)]">
+            <div className="relative lg:mr-[calc((100%-100vw)/2)]">
               <img
                 src={heroImg}
                 alt="Summer Tech technician servicing a wall-mounted air conditioner"
                 width={1200}
                 height={912}
-                className="h-64 w-full rounded-xl object-cover sm:h-80 lg:h-full lg:rounded-none"
+                className="h-64 w-full rounded-xl object-cover sm:h-80 lg:h-[540px] lg:rounded-none"
               />
             </div>
           </div>
