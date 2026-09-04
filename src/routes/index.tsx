@@ -182,7 +182,7 @@ function Index() {
                 ))}
               </div>
             </div>
-            <div className="relative lg:h-full">
+            <div className="relative lg:h-full lg:mr-[calc((100%-100vw)/2)]">
               <img
                 src={heroImg}
                 alt="Summer Tech technician servicing a wall-mounted air conditioner"
@@ -305,7 +305,7 @@ function Index() {
             height={800}
             className="absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover lg:block"
           />
-          <div className="absolute inset-y-0 right-1/2 hidden w-1/4 bg-gradient-to-r from-transparent to-navy lg:block" />
+          <div className="absolute inset-y-0 left-1/2 hidden w-40 bg-gradient-to-r from-navy to-transparent lg:block" />
           <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6">
             <div className="max-w-xl text-navy-foreground">
               <h2 className="text-2xl font-bold leading-tight sm:text-3xl">
