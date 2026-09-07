@@ -19,20 +19,20 @@ import { site, waLink } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Summer Tech — AC & HVAC Service Manama, Bahrain" },
+      { title: "Contact Summer Tech — AC & HVAC Service Doha, Qatar" },
       {
         name: "description",
         content:
-          "Get in touch with Summer Tech Maintenance Solutions in Manama, Bahrain. Fast AC repair, installation, cleaning, and AMC contracts. Call or WhatsApp +973 1234 5678.",
+          "Get in touch with Summer Tech Maintenance Solutions in Doha, Qatar. Fast AC repair, installation, cleaning, and AMC contracts. Call or WhatsApp +974 1234 5678.",
       },
       {
         property: "og:title",
-        content: "Contact Summer Tech — AC & HVAC Service Bahrain",
+        content: "Contact Summer Tech — AC & HVAC Service Qatar",
       },
       {
         property: "og:description",
         content:
-          "Let's Get Your AC Working Right. Rapid AC service, emergency breakdown response and AMC quotations across Bahrain.",
+          "Let's Get Your AC Working Right. Rapid AC service, emergency breakdown response and AMC quotations across Qatar.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -55,18 +55,18 @@ const serviceOptions = [
 ];
 
 const coverageAreas = [
-  "Manama",
-  "Seef",
-  "Juffair",
-  "Saar",
-  "Riffa",
-  "Muharraq",
-  "Amwaj Islands",
-  "Hamad Town",
-  "Budaiya",
-  "Hidd",
-  "Sanabis",
-  "Tubli",
+  "Doha",
+  "Lusail",
+  "The Pearl-Qatar",
+  "West Bay",
+  "Al Rayyan",
+  "Al Wakrah",
+  "Al Sadd",
+  "Al Khor",
+  "Umm Salal",
+  "Al Hilal",
+  "Abu Hamour",
+  "Madinat Khalifa",
 ];
 
 function ContactPage() {
@@ -170,7 +170,7 @@ ${message ? `- Notes: ${message}` : ""}`;
                 Service Hub
               </p>
               <p className="mt-1 text-base font-bold text-navy">{site.location}</p>
-              <p className="mt-2 text-xs text-muted-foreground">Serving all Bahrain governorates</p>
+              <p className="mt-2 text-xs text-muted-foreground">Serving all areas across Qatar</p>
             </div>
           </div>
         </section>
@@ -239,7 +239,7 @@ ${message ? `- Notes: ${message}` : ""}`;
 
                   <div>
                     <label htmlFor="mobileNumber" className="block text-sm font-semibold text-navy">
-                      Mobile Number (Bahrain / Int'l) <span className="text-destructive">*</span>
+                      Mobile Number (Qatar / Int'l) <span className="text-destructive">*</span>
                     </label>
                     <input
                       id="mobileNumber"
@@ -247,7 +247,7 @@ ${message ? `- Notes: ${message}` : ""}`;
                       required
                       value={mobileNumber}
                       onChange={(e) => setMobileNumber(e.target.value)}
-                      placeholder="+973 3XXXXXXX or +973 1234 5678"
+                      placeholder="+974 5XXXXXXX or +974 1234 5678"
                       className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground shadow-sm outline-none transition-all placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20"
                     />
                   </div>
@@ -368,15 +368,15 @@ ${message ? `- Notes: ${message}` : ""}`;
               <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                 <div>
                   <h2 className="text-2xl font-bold text-navy sm:text-3xl">
-                    Service Coverage Across Bahrain
+                    Service Coverage Across Qatar
                   </h2>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Based in Manama, our mobile service units serve clients across all governorates.
+                    Based in Doha, our mobile service units serve clients across Qatar.
                   </p>
                 </div>
                 <div className="mt-2 flex items-center gap-2 text-xs font-semibold text-primary md:mt-0">
                   <MapPin className="h-4 w-4" />
-                  <span>Manama, Kingdom of Bahrain</span>
+                  <span>Doha, State of Qatar</span>
                 </div>
               </div>
 
@@ -396,8 +396,8 @@ ${message ? `- Notes: ${message}` : ""}`;
             {/* Embedded Responsive Map */}
             <div className="relative h-72 w-full border-t border-border sm:h-96">
               <iframe
-                title="Summer Tech Bahrain Service Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114555.0084323284!2d50.49079979726562!3d26.216667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49af6777b7f1b7%3A0x6bfa5bcf3a1e2f75!2sManama%2C%20Bahrain!5e0!3m2!1sen!2sbh!4v1709575000000!5m2!1sen!2sbh"
+                title="Summer Tech Qatar Service Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115456.40228308477!2d51.4429994!3d25.286106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c534ffdce87f%3A0x44d9319f78cfd4b1!2sDoha%2C%20Qatar!5e0!3m2!1sen!2sqa!4v1709575000000!5m2!1sen!2sqa"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

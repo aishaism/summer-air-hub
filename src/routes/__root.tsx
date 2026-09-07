@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Summer Tech — AC & HVAC Maintenance Solutions in Bahrain" },
+      { title: "Summer Tech — AC & HVAC Maintenance Solutions in Qatar" },
       {
         name: "description",
         content:
-          "Professional residential and commercial AC and HVAC maintenance, repairs, installation, and Annual Maintenance Contracts (AMC) across Bahrain.",
+          "Professional residential and commercial AC and HVAC maintenance, repairs, installation, and Annual Maintenance Contracts (AMC) across Qatar.",
       },
       { name: "author", content: "Summer Tech Maintenance Solutions W.L.L." },
-      { property: "og:title", content: "Summer Tech — AC & HVAC Maintenance Solutions in Bahrain" },
+      { property: "og:title", content: "Summer Tech — AC & HVAC Maintenance Solutions in Qatar" },
       {
         property: "og:description",
         content:
-          "Professional residential and commercial AC and HVAC maintenance, repairs, installation, and Annual Maintenance Contracts (AMC) across Bahrain.",
+          "Professional residential and commercial AC and HVAC maintenance, repairs, installation, and Annual Maintenance Contracts (AMC) across Qatar.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

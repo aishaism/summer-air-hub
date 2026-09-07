@@ -75,12 +75,12 @@ export function Footer() {
 
             <p className="mt-3 max-w-xs text-xs leading-relaxed text-navy-foreground/75">
               Certified residential and commercial AC &amp; HVAC maintenance solutions across
-              Bahrain.
+              Qatar.
             </p>
 
             <div className="mt-2.5 flex items-center gap-1.5 text-[11px] text-navy-foreground/60">
               <ShieldCheck className="h-3.5 w-3.5 text-primary shrink-0" />
-              <span>Licensed Contractor • Bahrain</span>
+              <span>Licensed Contractor • Qatar</span>
             </div>
           </div>
 

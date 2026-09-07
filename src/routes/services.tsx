@@ -19,11 +19,11 @@ import svcCommercial from "@/assets/svc-commercial.jpg";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Our Services — Summer Tech AC & HVAC, Bahrain" },
+      { title: "Our Services — Summer Tech AC & HVAC, Qatar" },
       {
         name: "description",
         content:
-          "Complete AC & HVAC services in Bahrain: installation, maintenance, cleaning, repair, refrigerant, electrical, compressor, FCU and commercial HVAC.",
+          "Complete AC & HVAC services in Qatar: installation, maintenance, cleaning, repair, refrigerant, electrical, compressor, FCU and commercial HVAC.",
       },
       { property: "og:title", content: "Our Services — Summer Tech AC & HVAC" },
       {

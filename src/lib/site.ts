@@ -1,11 +1,11 @@
 export const site = {
   name: "Summer Tech",
   legalName: "Summer Tech Maintenance Solutions W.L.L",
-  phone: "+973 1234 5678",
-  whatsapp: "+973 1234 5678",
-  whatsappNumber: "97312345678",
+  phone: "+974 1234 5678",
+  whatsapp: "+974 1234 5678",
+  whatsappNumber: "97412345678",
   email: "info@summertech.com",
-  location: "Manama, Kingdom of Bahrain",
+  location: "Doha, State of Qatar",
 };
 
 export function waLink(message: string) {

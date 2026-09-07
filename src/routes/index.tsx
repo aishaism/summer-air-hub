@@ -34,17 +34,17 @@ import svcCommercial from "@/assets/svc-commercial.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Summer Tech — AC & HVAC Maintenance Solutions in Bahrain" },
+      { title: "Summer Tech — AC & HVAC Maintenance Solutions in Qatar" },
       {
         name: "description",
         content:
-          "Professional AC & HVAC installation, repair, cleaning and annual maintenance for homes and businesses in Bahrain. Request service on WhatsApp.",
+          "Professional AC & HVAC installation, repair, cleaning and annual maintenance for homes and businesses in Qatar. Request service on WhatsApp.",
       },
       { property: "og:title", content: "Summer Tech — AC & HVAC Maintenance Solutions" },
       {
         property: "og:description",
         content:
-          "Reliable AC installation, repair, cleaning and AMC services for residential and commercial properties in Bahrain.",
+          "Reliable AC installation, repair, cleaning and AMC services for residential and commercial properties in Qatar.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -299,32 +299,32 @@ function Index() {
         </section>
 
         {/* 2. WHY CHOOSE SUMMER TECH? */}
-        <section className="bg-background py-14 sm:py-20 border-b border-border/40">
+        <section className="bg-background py-10 sm:py-20 border-b border-border/40">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <div className="mx-auto max-w-2xl text-center">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-brand-soft px-3.5 py-1 text-xs font-semibold text-primary">
-                Trusted AC &amp; HVAC Specialists in Bahrain
+                Trusted AC &amp; HVAC Specialists in Qatar
               </span>
               <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-navy sm:text-3xl lg:text-4xl">
                 Why Choose Summer Tech?
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 We deliver certified HVAC technical solutions, transparent pricing, and rapid
-                on-site response for homes and businesses across Bahrain.
+                on-site response for homes and businesses across Qatar.
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-6">
+            <div className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-6">
               {reasons.map((r) => (
                 <div
                   key={r.title}
-                  className="group flex flex-col rounded-xl border border-border/80 bg-card p-5 shadow-xs transition-all duration-200 hover:border-primary/50 hover:shadow-md"
+                  className="group flex flex-col rounded-xl border border-border/80 bg-card p-3.5 sm:p-5 shadow-xs transition-all duration-200 hover:border-primary/50 hover:shadow-md"
                 >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <r.icon className="h-5 w-5" strokeWidth={1.75} />
+                  <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <r.icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.75} />
                   </div>
-                  <h3 className="mt-4 text-sm font-bold leading-snug text-navy">{r.title}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{r.desc}</p>
+                  <h3 className="mt-2.5 sm:mt-4 text-xs sm:text-sm font-bold leading-snug text-navy">{r.title}</h3>
+                  <p className="mt-1.5 sm:mt-2 text-[11px] sm:text-xs leading-relaxed text-muted-foreground">{r.desc}</p>
                 </div>
               ))}
             </div>

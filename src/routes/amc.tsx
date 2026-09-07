@@ -20,20 +20,20 @@ import amcCondenser from "@/assets/amc-condenser.jpg";
 export const Route = createFileRoute("/amc")({
   head: () => ({
     meta: [
-      { title: "Annual Maintenance Contract (AMC) — Summer Tech Bahrain" },
+      { title: "Annual Maintenance Contract (AMC) — Summer Tech Qatar" },
       {
         name: "description",
         content:
-          "Keep your AC running smoothly year-round with Summer Tech's comprehensive AMC contracts in Bahrain for villas, apartments, offices, shops, restaurants and commercial buildings.",
+          "Keep your AC running smoothly year-round with Summer Tech's comprehensive AMC contracts in Qatar for villas, apartments, offices, shops, restaurants and commercial buildings.",
       },
       {
         property: "og:title",
-        content: "Annual Maintenance Contract (AMC) — Summer Tech Bahrain",
+        content: "Annual Maintenance Contract (AMC) — Summer Tech Qatar",
       },
       {
         property: "og:description",
         content:
-          "Reliable AC Performance, Year After Year. Preventive maintenance, priority support, and scheduled AC inspections in Bahrain.",
+          "Reliable AC Performance, Year After Year. Preventive maintenance, priority support, and scheduled AC inspections in Qatar.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -25,12 +25,12 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       {
-        title: "About Us — Summer Tech Maintenance Solutions W.L.L. Bahrain",
+        title: "About Us — Summer Tech Maintenance Solutions W.L.L. Qatar",
       },
       {
         name: "description",
         content:
-          "Learn more about Summer Tech Maintenance Solutions W.L.L. — Bahrain's trusted AC & HVAC maintenance company in Manama, delivering dependable residential and commercial cooling solutions.",
+          "Learn more about Summer Tech Maintenance Solutions W.L.L. — Qatar's trusted AC & HVAC maintenance company in Doha, delivering dependable residential and commercial cooling solutions.",
       },
       {
         property: "og:title",
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:description",
         content:
-          "Professional AC & HVAC maintenance, repair, installation and AMC services across the Kingdom of Bahrain.",
+          "Professional AC & HVAC maintenance, repair, installation and AMC services across the State of Qatar.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -57,7 +57,7 @@ const keyStrengths = [
   {
     icon: Clock,
     title: "Fast Response Dispatch",
-    desc: "Prompt on-site arrival across all Bahrain governorates to resolve AC breakdowns before heat impacts your space.",
+    desc: "Prompt on-site arrival across Qatar to resolve AC breakdowns before heat impacts your space.",
   },
   {
     icon: FileText,
@@ -125,7 +125,7 @@ function AboutPage() {
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3.5 py-1.5 text-xs font-bold text-primary">
                 <Sparkles className="h-3.5 w-3.5" />
-                AC &amp; HVAC Specialists in Bahrain
+                AC &amp; HVAC Specialists in Qatar
               </span>
 
               <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">
@@ -134,14 +134,14 @@ function AboutPage() {
 
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 <strong className="text-navy">Summer Tech Maintenance Solutions W.L.L.</strong> is a
-                dedicated air conditioning and HVAC maintenance service company based in Manama,
-                Kingdom of Bahrain. We specialize in keeping residential homes, corporate offices,
+                dedicated air conditioning and HVAC maintenance service company based in Doha,
+                State of Qatar. We specialize in keeping residential homes, corporate offices,
                 retail shops, and commercial facilities reliably cool, energy-efficient, and
                 comfortable.
               </p>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                With Bahrain's intense summer climate, air conditioning is not a luxury—it is an
+                With Qatar's intense summer climate, air conditioning is not a luxury—it is an
                 essential lifeline. Our mission is to eliminate unexpected breakdowns through
                 rigorous preventive maintenance, swift emergency repairs, and expertly managed
                 Annual Maintenance Contracts (AMC).
@@ -149,7 +149,7 @@ function AboutPage() {
 
               <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {[
-                  { label: "Manama Based", sub: "Kingdom of Bahrain" },
+                  { label: "Doha Based", sub: "State of Qatar" },
                   { label: "All AC Types", sub: "Split, Cassette & FCU" },
                   { label: "Fast Dispatch", sub: "Emergency Response" },
                   { label: "Preventive AMC", sub: "Year-Round Protection" },
@@ -187,7 +187,7 @@ function AboutPage() {
               <div className="overflow-hidden rounded-2xl border border-border shadow-md">
                 <img
                   src={heroTechnician}
-                  alt="Summer Tech HVAC technician performing AC maintenance in Bahrain"
+                  alt="Summer Tech HVAC technician performing AC maintenance in Qatar"
                   width={900}
                   height={684}
                   className="h-72 w-full object-cover sm:h-96"
@@ -207,7 +207,7 @@ function AboutPage() {
         </section>
 
         {/* Why Choose Summer Tech Section */}
-        <section className="bg-brand-soft py-14 sm:py-20">
+        <section className="bg-brand-soft py-10 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <div className="text-center">
               <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
@@ -219,17 +219,17 @@ function AboutPage() {
               </p>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-2.5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {keyStrengths.map((s) => (
                 <div
                   key={s.title}
-                  className="flex flex-col rounded-2xl border border-border/80 bg-card p-6 shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                  className="flex flex-col rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3.5 sm:p-6 shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-primary">
-                    <s.icon className="h-6 w-6 stroke-[1.75]" />
+                  <div className="flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-brand-soft text-primary">
+                    <s.icon className="h-4 w-4 sm:h-6 sm:w-6 stroke-[1.75]" />
                   </div>
-                  <h3 className="mt-4 text-base font-bold text-navy">{s.title}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  <h3 className="mt-2.5 sm:mt-4 text-xs sm:text-base font-bold text-navy">{s.title}</h3>
+                  <p className="mt-1.5 sm:mt-2 text-[11px] sm:text-sm leading-relaxed text-muted-foreground">
                     {s.desc}
                   </p>
                 </div>
@@ -342,7 +342,7 @@ function AboutPage() {
           <div className="mx-auto grid max-w-7xl items-end gap-8 px-4 pt-10 sm:px-6 lg:grid-cols-[320px_1fr] lg:gap-14">
             <img
               src={ctaTechnician}
-              alt="Summer Tech professional technician ready to help in Bahrain"
+              alt="Summer Tech professional technician ready to help in Qatar"
               loading="lazy"
               width={912}
               height={1008}
