@@ -177,7 +177,7 @@ function AmcPage() {
   );
 
   return (
-    <div className="flex min-h-screen flex-col overflow-x-hidden">
+    <div className="flex min-h-screen flex-col">
       <Header />
 
       <main className="flex-1">

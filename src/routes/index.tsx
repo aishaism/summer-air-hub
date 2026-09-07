@@ -160,7 +160,7 @@ function Index() {
   const requestLink = waLink("Hello Summer Tech, I would like to request a service.");
 
   return (
-    <div className="flex min-h-screen flex-col overflow-x-hidden">
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
         {/* HERO */}
