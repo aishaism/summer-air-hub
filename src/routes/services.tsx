@@ -209,7 +209,7 @@ function ServicesPage() {
                     className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                   >
                     Request Service
-                    <WhatsAppIcon className="h-4 w-4" />
+                    <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
                   </a>
                 </div>
 
@@ -230,7 +230,9 @@ function ServicesPage() {
         <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6">
           <div className="grid grid-cols-1 items-center gap-6 rounded-2xl bg-navy px-6 py-8 text-navy-foreground sm:px-10 lg:grid-cols-[minmax(0,1fr)_auto]">
             <div className="min-w-0">
-              <h2 className="text-2xl font-bold sm:text-3xl">Can&rsquo;t Find the Service You Need?</h2>
+              <h2 className="text-2xl font-bold sm:text-3xl">
+                Can&rsquo;t Find the Service You Need?
+              </h2>
               <p className="mt-2 text-sm text-navy-foreground/80">
                 Contact our team and we&rsquo;ll help you with the right AC/HVAC solution.
               </p>

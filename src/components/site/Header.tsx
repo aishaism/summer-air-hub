@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { LogoMark, Wordmark, WhatsAppIcon } from "./icons";
+import { WhatsAppIcon } from "./icons";
 import { waLink } from "@/lib/site";
 
 const nav = [
@@ -18,9 +18,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:grid-cols-[auto_1fr_auto]">
-        <Link to="/" className="flex min-w-0 items-center gap-2">
-          <LogoMark className="h-10 w-10 shrink-0" />
-          <Wordmark />
+        <Link to="/" className="flex min-w-0 items-center">
+          <img
+            src="/images/summer-tech-logo.png"
+            alt="Summer Tech Maintenance Solutions W.L.L"
+            className="h-10 w-auto object-contain sm:h-11"
+          />
         </Link>
 
         <nav className="hidden items-center justify-center gap-8 lg:flex">
@@ -44,7 +47,7 @@ export function Header() {
             className="hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 sm:inline-flex"
           >
             Request Service
-            <WhatsAppIcon className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
           </a>
           <button
             type="button"
@@ -78,7 +81,7 @@ export function Header() {
               className="my-3 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground sm:hidden"
             >
               Request Service
-              <WhatsAppIcon />
+              <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
             </a>
           </nav>
         </div>

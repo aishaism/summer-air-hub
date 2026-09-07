@@ -1,7 +1,16 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import { LogoMark, Wordmark, WhatsAppIcon } from "./icons";
-import { site } from "@/lib/site";
+import {
+  ArrowUp,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  ShieldCheck,
+} from "lucide-react";
+import { WhatsAppIcon } from "./icons";
+import { site, waLink } from "@/lib/site";
 
 const quickLinks = [
   { label: "Home", to: "/" },
@@ -11,82 +20,190 @@ const quickLinks = [
   { label: "Contact Us", to: "/contact" },
 ] as const;
 
-const services = [
-  "AC Installation",
-  "AC Repair",
-  "AC Cleaning",
-  "AC Maintenance",
-  "Commercial HVAC",
-  "AMC",
+const serviceLinks = [
+  { label: "AC Installation", to: "/services" },
+  { label: "AC Repair", to: "/services" },
+  { label: "AC Cleaning", to: "/services" },
+  { label: "AC Maintenance", to: "/services" },
+  { label: "Commercial HVAC", to: "/services" },
+] as const;
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://facebook.com",
+    icon: Facebook,
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com",
+    icon: Instagram,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com",
+    icon: Linkedin,
+  },
+  {
+    name: "WhatsApp",
+    href: waLink("Hello Summer Tech, I would like to inquire about your AC services."),
+    icon: WhatsAppIcon,
+  },
 ];
 
 export function Footer() {
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
-    <footer className="bg-navy text-navy-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <div className="flex items-center gap-2">
-            <LogoMark className="h-10 w-10 shrink-0" />
-            <Wordmark light />
+    <footer className="relative border-t border-white/10 bg-navy text-navy-foreground">
+      {/* Compact Main Directory (~200px desktop height) */}
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          {/* Column 1: Brand (lg:col-span-4) */}
+          <div className="lg:col-span-4">
+            <Link to="/" className="inline-flex items-center">
+              <img
+                src="/images/summer-tech-logo.png"
+                alt="Summer Tech Maintenance Solutions W.L.L"
+                className="h-10 w-auto object-contain [filter:drop-shadow(0_0_1px_rgba(255,255,255,0.95))_drop-shadow(0_0_3px_rgba(255,255,255,0.4))]"
+              />
+            </Link>
+
+            <p className="mt-3 max-w-xs text-xs leading-relaxed text-navy-foreground/75">
+              Certified residential and commercial AC &amp; HVAC maintenance solutions across
+              Bahrain.
+            </p>
+
+            <div className="mt-2.5 flex items-center gap-1.5 text-[11px] text-navy-foreground/60">
+              <ShieldCheck className="h-3.5 w-3.5 text-primary shrink-0" />
+              <span>Licensed Contractor • Bahrain</span>
+            </div>
           </div>
-          <p className="mt-4 max-w-xs text-sm text-navy-foreground/70">
-            Reliable AC &amp; HVAC maintenance solutions for residential and commercial properties.
-          </p>
-          <div className="mt-5 flex items-center gap-4 text-navy-foreground/80">
-            <Facebook className="h-5 w-5" />
-            <Instagram className="h-5 w-5" />
-            <Linkedin className="h-5 w-5" />
-            <MapPin className="h-5 w-5" />
-            <Phone className="h-5 w-5" />
+
+          {/* Columns 2 & 3: Quick Links & Services in a clean 2-column grid on mobile (lg:col-span-5) */}
+          <div className="grid grid-cols-2 gap-6 lg:col-span-5">
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-white">
+                Quick Links
+              </h4>
+              <ul className="mt-3 space-y-2 text-xs">
+                {quickLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.to}
+                      className="text-navy-foreground/75 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Our Services */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-white">
+                Our Services
+              </h4>
+              <ul className="mt-3 space-y-2 text-xs">
+                {serviceLinks.map((service) => (
+                  <li key={service.label}>
+                    <Link
+                      to={service.to}
+                      className="text-navy-foreground/75 transition-colors hover:text-white"
+                    >
+                      {service.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div>
-          <h3 className="text-sm font-semibold">Quick Links</h3>
-          <ul className="mt-4 space-y-2 text-sm text-navy-foreground/70">
-            {quickLinks.map((l) => (
-              <li key={l.to}>
-                <Link to={l.to} className="transition-colors hover:text-navy-foreground">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* Column 4: Contact (lg:col-span-3) */}
+          <div className="lg:col-span-3">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-white">Contact</h4>
+            <div className="mt-3 grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 lg:grid-cols-1">
+              <a
+                href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                className="inline-flex items-center gap-2 text-navy-foreground/80 transition-colors hover:text-white"
+              >
+                <Phone className="h-3.5 w-3.5 text-primary shrink-0" />
+                <span>{site.phone}</span>
+              </a>
 
-        <div>
-          <h3 className="text-sm font-semibold">Our Services</h3>
-          <ul className="mt-4 space-y-2 text-sm text-navy-foreground/70">
-            {services.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
-        </div>
+              <a
+                href={waLink("Hello Summer Tech, I would like to inquire about your AC services.")}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-navy-foreground/80 transition-colors hover:text-white"
+              >
+                <WhatsAppIcon className="h-3.5 w-3.5 text-primary shrink-0" />
+                <span>{site.whatsapp}</span>
+              </a>
 
-        <div>
-          <h3 className="text-sm font-semibold">Contact Us</h3>
-          <ul className="mt-4 space-y-3 text-sm text-navy-foreground/70">
-            <li className="flex items-center gap-3">
-              <Phone className="h-4 w-4 shrink-0" />
-              {site.phone}
-            </li>
-            <li className="flex items-center gap-3">
-              <WhatsAppIcon className="h-4 w-4 shrink-0" />
-              {site.whatsapp}
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail className="h-4 w-4 shrink-0" />
-              {site.email}
-            </li>
-            <li className="flex items-center gap-3">
-              <MapPin className="h-4 w-4 shrink-0" />
-              {site.location}
-            </li>
-          </ul>
+              <a
+                href={`mailto:${site.email}`}
+                className="inline-flex items-center gap-2 text-navy-foreground/80 transition-colors hover:text-white break-all"
+              >
+                <Mail className="h-3.5 w-3.5 text-primary shrink-0" />
+                <span>{site.email}</span>
+              </a>
+
+              <div className="inline-flex items-center gap-2 text-navy-foreground/70">
+                <MapPin className="h-3.5 w-3.5 text-primary shrink-0" />
+                <span>{site.location}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="border-t border-navy-foreground/10 py-5 text-center text-xs text-navy-foreground/60">
-        © 2026 Summer Tech Maintenance Solutions W.L.L. All Rights Reserved.
+
+      {/* Bottom Row: Thin Divider, Small Social Icons, Copyright in one compact row */}
+      <div className="border-t border-white/10 bg-black/15">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-3.5 sm:flex-row sm:px-6 lg:px-8">
+          <p className="text-center text-xs text-navy-foreground/60 sm:text-left">
+            © 2025 Summer Tech Maintenance Solutions W.L.L. All Rights Reserved.
+          </p>
+
+          <div className="flex items-center gap-4">
+            {/* Small Social Media Icons */}
+            <div className="flex items-center gap-1.5">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Visit Summer Tech on ${item.name}`}
+                    className="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-white/5 text-navy-foreground/75 transition-all duration-150 hover:border-primary/40 hover:bg-primary/20 hover:text-white"
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                  </a>
+                );
+              })}
+            </div>
+
+            <span className="hidden text-white/20 sm:inline">•</span>
+
+            <button
+              type="button"
+              onClick={scrollToTop}
+              aria-label="Scroll to top"
+              className="inline-flex items-center gap-1 text-[11px] text-navy-foreground/60 transition-colors hover:text-white"
+            >
+              <span>Top</span>
+              <ArrowUp className="h-3 w-3" />
+            </button>
+          </div>
+        </div>
       </div>
     </footer>
   );

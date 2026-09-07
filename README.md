@@ -624,15 +624,10 @@ The final result should visually look like the attached approved Home Page desig
 
 Before finishing, check the page on both desktop and mobile and fix any layout issues.
 
-This project was built with [Lovable](https://lovable.dev).
+## Summer Tech Maintenance Solutions W.L.L.
 
-## Build with Lovable
+Official website for Summer Tech Maintenance Solutions W.L.L., delivering certified residential and commercial air conditioning and HVAC maintenance, emergency diagnostics, and Annual Maintenance Contracts (AMC) across the Kingdom of Bahrain.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a5a08f00-8fc7-40f3-a1ac-a9ee87171eea).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 

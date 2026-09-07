@@ -99,7 +99,7 @@ const commercialFeatures = [
 
 function AboutPage() {
   const requestLink = waLink(
-    "Hello Summer Tech, I would like to learn more about your services and request an estimate."
+    "Hello Summer Tech, I would like to learn more about your services and request an estimate.",
   );
 
   return (
@@ -136,14 +136,15 @@ function AboutPage() {
                 <strong className="text-navy">Summer Tech Maintenance Solutions W.L.L.</strong> is a
                 dedicated air conditioning and HVAC maintenance service company based in Manama,
                 Kingdom of Bahrain. We specialize in keeping residential homes, corporate offices,
-                retail shops, and commercial facilities reliably cool, energy-efficient, and comfortable.
+                retail shops, and commercial facilities reliably cool, energy-efficient, and
+                comfortable.
               </p>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 With Bahrain's intense summer climate, air conditioning is not a luxury—it is an
-                essential lifeline. Our mission is to eliminate unexpected breakdowns through rigorous
-                preventive maintenance, swift emergency repairs, and expertly managed Annual
-                Maintenance Contracts (AMC).
+                essential lifeline. Our mission is to eliminate unexpected breakdowns through
+                rigorous preventive maintenance, swift emergency repairs, and expertly managed
+                Annual Maintenance Contracts (AMC).
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -153,7 +154,10 @@ function AboutPage() {
                   { label: "Fast Dispatch", sub: "Emergency Response" },
                   { label: "Preventive AMC", sub: "Year-Round Protection" },
                 ].map((stat) => (
-                  <div key={stat.label} className="rounded-xl border border-border bg-card p-3.5 text-center shadow-xs">
+                  <div
+                    key={stat.label}
+                    className="rounded-xl border border-border bg-card p-3.5 text-center shadow-xs"
+                  >
                     <p className="text-sm font-bold text-navy">{stat.label}</p>
                     <p className="mt-1 text-[11px] text-muted-foreground">{stat.sub}</p>
                   </div>
@@ -210,7 +214,8 @@ function AboutPage() {
                 Why Choose Summer Tech?
               </h2>
               <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
-                Professionalism, engineering precision, and a customer-first commitment set us apart.
+                Professionalism, engineering precision, and a customer-first commitment set us
+                apart.
               </p>
             </div>
 
@@ -240,7 +245,8 @@ function AboutPage() {
               Comprehensive Service Coverage
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
-              Tailored cooling and ventilation services engineered for both residential comfort and commercial performance.
+              Tailored cooling and ventilation services engineered for both residential comfort and
+              commercial performance.
             </p>
           </div>
 
@@ -253,13 +259,15 @@ function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-navy">Residential AC Services</h3>
-                  <p className="text-xs text-muted-foreground">Villas, Apartments &amp; Compounds</p>
+                  <p className="text-xs text-muted-foreground">
+                    Villas, Apartments &amp; Compounds
+                  </p>
                 </div>
               </div>
 
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                We ensure your family enjoys clean, ice-cold air with whisper-quiet operation and minimal
-                electrical energy consumption throughout the summer months.
+                We ensure your family enjoys clean, ice-cold air with whisper-quiet operation and
+                minimal electrical energy consumption throughout the summer months.
               </p>
 
               <ul className="mt-6 space-y-3">
@@ -292,13 +300,15 @@ function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-navy">Commercial HVAC Solutions</h3>
-                  <p className="text-xs text-muted-foreground">Offices, Retail, Cafes &amp; Buildings</p>
+                  <p className="text-xs text-muted-foreground">
+                    Offices, Retail, Cafes &amp; Buildings
+                  </p>
                 </div>
               </div>
 
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Commercial environments require continuous uptime. Our scheduled preventive maintenance
-                programs protect your business operations, inventory, and staff comfort.
+                Commercial environments require continuous uptime. Our scheduled preventive
+                maintenance programs protect your business operations, inventory, and staff comfort.
               </p>
 
               <ul className="mt-6 space-y-3">
@@ -312,7 +322,9 @@ function AboutPage() {
 
               <div className="mt-8 pt-2">
                 <a
-                  href={waLink("Hello Summer Tech, I would like to inquire about commercial HVAC services.")}
+                  href={waLink(
+                    "Hello Summer Tech, I would like to inquire about commercial HVAC services.",
+                  )}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary hover:underline"
@@ -352,7 +364,7 @@ function AboutPage() {
                 className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
               >
                 Request Service on WhatsApp
-                <WhatsAppIcon className="h-4 w-4" />
+                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
               </a>
             </div>
           </div>
