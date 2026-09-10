@@ -12,6 +12,7 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { waLink } from "@/lib/site";
 
 import amcHero from "@/assets/amc-hero.jpg";
@@ -45,7 +46,15 @@ export const Route = createFileRoute("/amc")({
 /* Custom high-fidelity inclusion icons matching approved reference */
 function MaintenanceCogIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <circle cx="18" cy="18" r="4" className="fill-primary/10" />
       <path d="M18 4v3M18 29v3M4 18h3M29 18h3M8.1 8.1l2.1 2.1M25.8 25.8l2.1 2.1M8.1 27.9l2.1-2.1M25.8 10.2l2.1-2.1" />
       <circle cx="18" cy="18" r="8" />
@@ -55,7 +64,15 @@ function MaintenanceCogIcon({ className = "h-8 w-8" }: { className?: string }) {
 
 function InspectionDocIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <rect x="7" y="5" width="16" height="22" rx="2" className="fill-primary/10" />
       <path d="M11 11h8M11 16h6" />
       <circle cx="23" cy="23" r="6" className="fill-background" strokeWidth="2" />
@@ -67,7 +84,15 @@ function InspectionDocIcon({ className = "h-8 w-8" }: { className?: string }) {
 
 function FilterCleaningIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <rect x="6" y="7" width="24" height="22" rx="2" className="fill-primary/10" />
       <line x1="12" y1="7" x2="12" y2="29" />
       <line x1="18" y1="7" x2="18" y2="29" />
@@ -81,7 +106,15 @@ function FilterCleaningIcon({ className = "h-8 w-8" }: { className?: string }) {
 
 function CoilInspectionIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M11 7v22c0 1.5 2 2.5 3.5 1.5l.5-.5c1.5-1 1.5-3 1.5-4.5V10c0-1.5 2-2.5 3.5-1.5l.5.5c1.5 1 1.5 3 1.5 4.5v16c0 1.5 2 2.5 3.5 1.5" />
       <line x1="6" y1="7" x2="11" y2="7" />
       <line x1="25" y1="29" x2="30" y2="29" />
@@ -91,18 +124,37 @@ function CoilInspectionIcon({ className = "h-8 w-8" }: { className?: string }) {
 
 function DrainageInspectionIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <rect x="8" y="6" width="20" height="24" rx="2" className="fill-primary/10" />
       <path d="M14 6v8h8V6" />
       <path d="M18 18v6" strokeWidth="2" />
-      <path d="M18 27c-1.5 0-2.5-1-2.5-2 0-1.2 2.5-4 2.5-4s2.5 2.8 2.5 4c0 1-1 2-2.5 2z" className="fill-primary" />
+      <path
+        d="M18 27c-1.5 0-2.5-1-2.5-2 0-1.2 2.5-4 2.5-4s2.5 2.8 2.5 4c0 1-1 2-2.5 2z"
+        className="fill-primary"
+      />
     </svg>
   );
 }
 
 function PressureGaugeIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <circle cx="12" cy="15" r="7" className="fill-primary/10" />
       <circle cx="24" cy="15" r="7" className="fill-primary/10" />
       <path d="M12 15l2-3M24 15l-2-3" />
@@ -114,7 +166,15 @@ function PressureGaugeIcon({ className = "h-8 w-8" }: { className?: string }) {
 
 function ElectricalInspectionIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M18 4l10 5v8c0 8-5 13-10 15C13 30 8 25 8 17V9l10-5z" className="fill-primary/10" />
       <path d="M19 11l-4 7h5l-1 7 5-8h-5l1-6z" fill="currentColor" stroke="none" />
     </svg>
@@ -123,7 +183,15 @@ function ElectricalInspectionIcon({ className = "h-8 w-8" }: { className?: strin
 
 function PerformanceTestingIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <rect x="5" y="6" width="26" height="18" rx="2" className="fill-primary/10" />
       <path d="M18 24v6M12 30h12" />
       <path d="M9 18l5-6 4 4 6-7" strokeWidth="2.2" />
@@ -134,9 +202,24 @@ function PerformanceTestingIcon({ className = "h-8 w-8" }: { className?: string 
 
 function PriorityServiceIcon({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 36 36" fill="none" className={className} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M18 4l11 5v8c0 7.5-5 13-11 15C12 30 7 24.5 7 17V9l11-5z" className="fill-primary/10" />
-      <polygon points="18,11 20,15 24.5,15.5 21,18.5 22,23 18,20.5 14,23 15,18.5 11.5,15.5 16,15" fill="currentColor" stroke="none" />
+    <svg
+      viewBox="0 0 36 36"
+      fill="none"
+      className={className}
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path
+        d="M18 4l11 5v8c0 7.5-5 13-11 15C12 30 7 24.5 7 17V9l11-5z"
+        className="fill-primary/10"
+      />
+      <polygon
+        points="18,11 20,15 24.5,15.5 21,18.5 22,23 18,20.5 14,23 15,18.5 11.5,15.5 16,15"
+        fill="currentColor"
+        stroke="none"
+      />
     </svg>
   );
 }
@@ -173,7 +256,7 @@ const amcAvailableFor = [
 
 function AmcPage() {
   const amcQuoteLink = waLink(
-    "Hello Summer Tech, I would like to get a quote for an Annual Maintenance Contract (AMC)."
+    "Hello Summer Tech, I would like to get a quote for an Annual Maintenance Contract (AMC).",
   );
 
   return (
@@ -210,15 +293,9 @@ function AmcPage() {
                   and ready throughout the year.
                 </p>
                 <div className="mt-8">
-                  <a
-                    href={amcQuoteLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2.5 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
-                  >
+                  <WhatsAppButton href={amcQuoteLink} size="lg" className="rounded-full">
                     Get an AMC Quote
-                    <WhatsAppIcon className="h-4 w-4" />
-                  </a>
+                  </WhatsAppButton>
                 </div>
               </div>
 
@@ -273,23 +350,15 @@ function AmcPage() {
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-primary text-primary-foreground shadow-sm">
                       <Check className="h-4 w-4 stroke-[3]" />
                     </span>
-                    <span className="text-sm font-medium text-navy sm:text-base">
-                      {benefit}
-                    </span>
+                    <span className="text-sm font-medium text-navy sm:text-base">{benefit}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="mt-8 pt-4">
-                <a
-                  href={amcQuoteLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-                >
+                <WhatsAppButton href={amcQuoteLink} size="md" className="w-full">
                   Request AMC Proposal
-                  <WhatsAppIcon className="h-4 w-4" />
-                </a>
+                </WhatsAppButton>
               </div>
             </div>
           </div>
@@ -328,15 +397,9 @@ function AmcPage() {
                   Get an AMC Quote Today and enjoy worry-free cooling all year long.
                 </p>
                 <div className="mt-6">
-                  <a
-                    href={amcQuoteLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2.5 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary/90 hover:shadow-lg"
-                  >
+                  <WhatsAppButton href={amcQuoteLink} size="lg" className="rounded-full">
                     Get an AMC Quote
-                    <WhatsAppIcon className="h-4 w-4" />
-                  </a>
+                  </WhatsAppButton>
                 </div>
               </div>
 

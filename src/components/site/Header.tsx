@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { WhatsAppIcon } from "./icons";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { waLink } from "@/lib/site";
 
 const nav = [
@@ -41,15 +41,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 justify-self-end">
-          <a
+          <WhatsAppButton
             href={waLink("Hello Summer Tech, I would like to request a service.")}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 sm:inline-flex"
+            size="sm"
+            className="hidden sm:inline-flex rounded-full"
           >
             Request Service
-            <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-          </a>
+          </WhatsAppButton>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -75,15 +73,13 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <a
+            <WhatsAppButton
               href={waLink("Hello Summer Tech, I would like to request a service.")}
-              target="_blank"
-              rel="noreferrer"
-              className="my-3 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground sm:hidden"
+              size="sm"
+              className="my-3 w-full sm:hidden rounded-full"
             >
               Request Service
-              <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-            </a>
+            </WhatsAppButton>
           </nav>
         </div>
       )}

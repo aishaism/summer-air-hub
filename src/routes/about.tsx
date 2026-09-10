@@ -15,6 +15,7 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { waLink } from "@/lib/site";
 
 import heroTechnician from "@/assets/hero-technician.jpg";
@@ -134,10 +135,9 @@ function AboutPage() {
 
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 <strong className="text-navy">Summer Tech Maintenance Solutions W.L.L.</strong> is a
-                dedicated air conditioning and HVAC maintenance service company based in Doha,
-                State of Qatar. We specialize in keeping residential homes, corporate offices,
-                retail shops, and commercial facilities reliably cool, energy-efficient, and
-                comfortable.
+                dedicated air conditioning and HVAC maintenance service company based in Doha, State
+                of Qatar. We specialize in keeping residential homes, corporate offices, retail
+                shops, and commercial facilities reliably cool, energy-efficient, and comfortable.
               </p>
 
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
@@ -165,15 +165,9 @@ function AboutPage() {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href={requestLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-                >
+                <WhatsAppButton href={requestLink} size="md">
                   Contact Our Team on WhatsApp
-                  <WhatsAppIcon className="h-4 w-4" />
-                </a>
+                </WhatsAppButton>
                 <Link
                   to="/services"
                   className="inline-flex items-center gap-2 rounded-xl border border-border bg-background px-6 py-3.5 text-sm font-semibold text-navy transition-colors hover:bg-muted"
@@ -228,7 +222,9 @@ function AboutPage() {
                   <div className="flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-brand-soft text-primary">
                     <s.icon className="h-4 w-4 sm:h-6 sm:w-6 stroke-[1.75]" />
                   </div>
-                  <h3 className="mt-2.5 sm:mt-4 text-xs sm:text-base font-bold text-navy">{s.title}</h3>
+                  <h3 className="mt-2.5 sm:mt-4 text-xs sm:text-base font-bold text-navy">
+                    {s.title}
+                  </h3>
                   <p className="mt-1.5 sm:mt-2 text-[11px] sm:text-sm leading-relaxed text-muted-foreground">
                     {s.desc}
                   </p>
@@ -357,15 +353,9 @@ function AboutPage() {
                 breakdown troubleshooting or a comprehensive Annual Maintenance Contract, our
                 technicians are standing by.
               </p>
-              <a
-                href={requestLink}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-              >
+              <WhatsAppButton href={requestLink} size="md" className="mt-6">
                 Request Service on WhatsApp
-                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-              </a>
+              </WhatsAppButton>
             </div>
           </div>
         </section>

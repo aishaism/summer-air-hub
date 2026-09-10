@@ -14,6 +14,7 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { site, waLink } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
@@ -148,7 +149,7 @@ ${message ? `- Notes: ${message}` : ""}`;
               rel="noreferrer"
               className="flex flex-col rounded-2xl border border-border/80 bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-primary">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#25D366]/15 text-[#25D366]">
                 <WhatsAppIcon className="h-6 w-6" />
               </div>
               <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -157,7 +158,9 @@ ${message ? `- Notes: ${message}` : ""}`;
               <p className="mt-2 text-base font-bold text-navy hover:text-primary transition-colors">
                 Chat on WhatsApp
               </p>
-              <p className="mt-2 text-xs text-muted-foreground">Fastest response for urgent requests</p>
+              <p className="mt-2 text-xs text-muted-foreground">
+                Fastest response for urgent requests
+              </p>
             </a>
 
             {/* Email */}
@@ -194,9 +197,12 @@ ${message ? `- Notes: ${message}` : ""}`;
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             {/* Form Column */}
             <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm sm:p-8 lg:col-span-7">
-              <h2 className="text-2xl font-bold text-navy sm:text-3xl">Send Us a Service Request</h2>
+              <h2 className="text-2xl font-bold text-navy sm:text-3xl">
+                Send Us a Service Request
+              </h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Fill in your details below and our technical service supervisor will get in touch promptly.
+                Fill in your details below and our technical service supervisor will get in touch
+                promptly.
               </p>
 
               {submitted ? (
@@ -206,20 +212,15 @@ ${message ? `- Notes: ${message}` : ""}`;
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-navy">Request Received!</h3>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Thank you, <strong className="text-navy">{fullName}</strong>. We have received your
-                    request for <strong className="text-navy">{selectedService}</strong>. Our team will contact
-                    you on <strong className="text-navy">{mobileNumber}</strong> shortly.
+                    Thank you, <strong className="text-navy">{fullName}</strong>. We have received
+                    your request for <strong className="text-navy">{selectedService}</strong>. Our
+                    team will contact you on <strong className="text-navy">{mobileNumber}</strong>{" "}
+                    shortly.
                   </p>
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                    <a
-                      href={getCustomWaLink()}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-                    >
+                    <WhatsAppButton href={getCustomWaLink()} size="md">
                       Continue on WhatsApp
-                      <WhatsAppIcon className="h-4 w-4" />
-                    </a>
+                    </WhatsAppButton>
                     <button
                       type="button"
                       onClick={() => {
@@ -267,7 +268,10 @@ ${message ? `- Notes: ${message}` : ""}`;
                   </div>
 
                   <div>
-                    <label htmlFor="serviceRequired" className="block text-sm font-semibold text-navy">
+                    <label
+                      htmlFor="serviceRequired"
+                      className="block text-sm font-semibold text-navy"
+                    >
                       Service Required <span className="text-destructive">*</span>
                     </label>
                     <div className="relative mt-2">
@@ -324,7 +328,9 @@ ${message ? `- Notes: ${message}` : ""}`;
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white">Prefer Instant WhatsApp?</h3>
-                    <p className="text-xs text-navy-foreground/75">Direct connection to technician</p>
+                    <p className="text-xs text-navy-foreground/75">
+                      Direct connection to technician
+                    </p>
                   </div>
                 </div>
 
@@ -333,15 +339,13 @@ ${message ? `- Notes: ${message}` : ""}`;
                   on-duty service team for immediate advice and dispatch.
                 </p>
 
-                <a
+                <WhatsAppButton
                   href={waLink("Hello Summer Tech, I need immediate AC assistance.")}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                  size="md"
+                  className="mt-6 w-full"
                 >
                   Chat with Technician Now
-                  <WhatsAppIcon className="h-4 w-4" />
-                </a>
+                </WhatsAppButton>
               </div>
 
               {/* Service Commitments */}
@@ -351,8 +355,8 @@ ${message ? `- Notes: ${message}` : ""}`;
                   <li className="flex items-start gap-3">
                     <Zap className="h-5 w-5 shrink-0 text-primary" />
                     <span className="text-xs leading-relaxed text-muted-foreground">
-                      <strong className="text-navy">Rapid On-Site Response:</strong> Same-day dispatch
-                      for urgent residential and commercial AC breakdowns.
+                      <strong className="text-navy">Rapid On-Site Response:</strong> Same-day
+                      dispatch for urgent residential and commercial AC breakdowns.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -365,8 +369,8 @@ ${message ? `- Notes: ${message}` : ""}`;
                   <li className="flex items-start gap-3">
                     <Clock className="h-5 w-5 shrink-0 text-primary" />
                     <span className="text-xs leading-relaxed text-muted-foreground">
-                      <strong className="text-navy">Transparent Estimates:</strong> Honest pricing with
-                      no surprise fees or unnecessary parts replacements.
+                      <strong className="text-navy">Transparent Estimates:</strong> Honest pricing
+                      with no surprise fees or unnecessary parts replacements.
                     </span>
                   </li>
                 </ul>

@@ -64,15 +64,14 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Link to="/" className="inline-flex items-center">
               <img
-                src="/images/summer-tech-logo.png"
+                src="/images/summer-tech-logo-white.png"
                 alt="Summer Tech Maintenance Solutions W.L.L"
-                className="h-10 w-auto object-contain [filter:drop-shadow(0_0_1px_rgba(255,255,255,0.95))_drop-shadow(0_0_3px_rgba(255,255,255,0.4))]"
+                className="h-10 w-auto object-contain"
               />
             </Link>
 
             <p className="mt-3 max-w-xs text-xs leading-relaxed text-navy-foreground/75">
-              Certified residential and commercial AC &amp; HVAC maintenance solutions across
-              Qatar.
+              Certified residential and commercial AC &amp; HVAC maintenance solutions across Qatar.
             </p>
 
             <div className="mt-2.5 flex items-center gap-1.5 text-[11px] text-navy-foreground/60">

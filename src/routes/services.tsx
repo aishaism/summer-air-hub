@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { waLink } from "@/lib/site";
 
 import servicesHero from "@/assets/services-hero.jpg";
@@ -215,15 +216,13 @@ function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <a
+                  <WhatsAppButton
                     href={waLink(`Hello Summer Tech, I would like to request ${s.title}.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                    size="sm"
+                    className="mt-6 w-fit"
                   >
                     Request Service
-                    <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                  </a>
+                  </WhatsAppButton>
                 </div>
 
                 <img
@@ -250,15 +249,13 @@ function ServicesPage() {
                 Contact our team and we&rsquo;ll help you with the right AC/HVAC solution.
               </p>
             </div>
-            <a
+            <WhatsAppButton
               href={waLink("Hello Summer Tech, I need help finding the right AC/HVAC service.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              size="md"
+              className="w-fit"
             >
               Talk to Us on WhatsApp
-              <WhatsAppIcon className="h-4 w-4" />
-            </a>
+            </WhatsAppButton>
           </div>
         </section>
       </main>

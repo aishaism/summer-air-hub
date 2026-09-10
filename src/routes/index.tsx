@@ -19,6 +19,7 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { waLink } from "@/lib/site";
 
 import heroImg from "@/assets/hero-technician.jpg";
@@ -197,15 +198,9 @@ function Index() {
 
             {/* 4. Request Service + Explore Services buttons (single row, side by side) */}
             <div className="mt-5 flex w-full flex-row items-center gap-2.5 sm:gap-3">
-              <a
-                href={requestLink}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary px-3 py-2.5 text-xs font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 text-center whitespace-nowrap"
-              >
-                <span>Request Service</span>
-                <WhatsAppIcon className="h-3.5 w-3.5 shrink-0 text-[#25D366]" />
-              </a>
+              <WhatsAppButton href={requestLink} size="sm" className="flex-1 whitespace-nowrap">
+                Request Service
+              </WhatsAppButton>
               <Link
                 to="/services"
                 className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-primary bg-background px-3 py-2.5 text-xs font-semibold text-primary transition-colors hover:bg-brand-soft text-center whitespace-nowrap"
@@ -253,15 +248,9 @@ function Index() {
                 commercial properties.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href={requestLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-                >
+                <WhatsAppButton href={requestLink} size="md">
                   Request Service
-                  <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                </a>
+                </WhatsAppButton>
                 <Link
                   to="/services"
                   className="inline-flex items-center gap-2 rounded-lg border border-primary bg-background px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-brand-soft"
@@ -323,8 +312,12 @@ function Index() {
                   <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <r.icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.75} />
                   </div>
-                  <h3 className="mt-2.5 sm:mt-4 text-xs sm:text-sm font-bold leading-snug text-navy">{r.title}</h3>
-                  <p className="mt-1.5 sm:mt-2 text-[11px] sm:text-xs leading-relaxed text-muted-foreground">{r.desc}</p>
+                  <h3 className="mt-2.5 sm:mt-4 text-xs sm:text-sm font-bold leading-snug text-navy">
+                    {r.title}
+                  </h3>
+                  <p className="mt-1.5 sm:mt-2 text-[11px] sm:text-xs leading-relaxed text-muted-foreground">
+                    {r.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -452,15 +445,12 @@ function Index() {
                 ))}
               </ul>
               <div className="mt-5 flex justify-center sm:mt-7 sm:justify-start">
-                <a
+                <WhatsAppButton
                   href={waLink("Hello Summer Tech, I would like an AMC quote.")}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-background px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-brand-soft"
+                  size="md"
                 >
                   Get an AMC Quote
-                  <WhatsAppIcon className="h-4 w-4" />
-                </a>
+                </WhatsAppButton>
               </div>
             </div>
           </div>
@@ -503,15 +493,9 @@ function Index() {
                 Our experienced technicians are ready to help you with installation, maintenance,
                 repair and emergency breakdowns.
               </p>
-              <a
-                href={requestLink}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-              >
+              <WhatsAppButton href={requestLink} size="md" className="mt-6">
                 Request Service on WhatsApp
-                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-              </a>
+              </WhatsAppButton>
             </div>
           </div>
         </section>

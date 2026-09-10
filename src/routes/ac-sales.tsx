@@ -14,13 +14,18 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { brandLogoMap } from "@/components/site/BrandLogos";
 import { site, waLink } from "@/lib/site";
 
-import svcInstallation from "@/assets/svc-installation.jpg";
-import svcCommercial from "@/assets/svc-commercial.jpg";
-import svcFcu from "@/assets/svc-fcu.jpg";
-import amcCondenser from "@/assets/amc-condenser.jpg";
-import servicesHero from "@/assets/services-hero.jpg";
+import acSalesHero from "@/assets/ac-sales-hero.jpg";
+import acModelSplit from "@/assets/ac-model-split.jpg";
+import acModelWindow from "@/assets/ac-model-window.jpg";
+import acModelCassette from "@/assets/ac-model-cassette.jpg";
+import acModelDucted from "@/assets/ac-model-ducted.jpg";
+import acModelFloor from "@/assets/ac-model-floor.jpg";
+import acModelPackage from "@/assets/ac-model-package.jpg";
+import acModelVrf from "@/assets/ac-model-vrf.jpg";
 
 export const Route = createFileRoute("/ac-sales")({
   head: () => ({
@@ -64,49 +69,49 @@ const acModels = [
     title: "Split AC",
     desc: "Wall-mounted high efficiency units for bedrooms, living rooms, and private offices. Whisper-quiet and energy-saving.",
     capacities: "1.5 Ton • 2.0 Ton • 2.5 Ton • 3.0 Ton",
-    img: svcInstallation,
+    img: acModelSplit,
     features: ["Inverter & Non-Inverter", "Rapid Turbo Cooling", "Multi-stage Air Filters"],
   },
   {
     title: "Window AC",
     desc: "Compact, self-contained cooling units built for apartments, staff accommodations, and immediate plug-and-play installation.",
     capacities: "1.5 Ton • 2.0 Ton",
-    img: amcCondenser,
+    img: acModelWindow,
     features: ["Robust Rotary Compressor", "Easy Slide-out Chassis", "High Ambient T3 Rated"],
   },
   {
     title: "Cassette AC",
     desc: "360-degree ceiling recessed units offering even airflow distribution across open offices, restaurants, and retail spaces.",
     capacities: "2.0 Ton • 3.0 Ton • 4.0 Ton • 5.0 Ton",
-    img: svcCommercial,
+    img: acModelCassette,
     features: ["Four-way & 360° Air Throw", "Built-in Drain Pump", "Sleek Flush Ceiling Profile"],
   },
   {
     title: "Ducted AC",
     desc: "Concealed ducted split systems providing seamless, hidden cooling for luxury villas, executive suites, and modern residences.",
     capacities: "2.5 Ton to 8.5 Ton",
-    img: svcFcu,
+    img: acModelDucted,
     features: ["Architectural Grille Aesthetics", "Zone Control Compatible", "Quiet Air Ducts"],
   },
   {
     title: "Floor Standing AC",
     desc: "High-capacity vertical tower units designed for large open halls, mosques, event venues, and spacious showrooms.",
     capacities: "3.0 Ton • 4.0 Ton • 5.0 Ton",
-    img: servicesHero,
+    img: acModelFloor,
     features: ["Long-distance Air Throw", "Digital Touch Display", "Fast Temperature Pull-down"],
   },
   {
     title: "Package AC",
     desc: "All-in-one rooftop units engineered for commercial buildings, supermarkets, warehouses, and industrial premises.",
     capacities: "5.0 Ton to 30.0+ Ton",
-    img: amcCondenser,
+    img: acModelPackage,
     features: ["Single Outdoor Enclosure", "Weatherproof Anti-corrosion", "Economizer Option"],
   },
   {
     title: "VRF / VRV Systems",
     desc: "Variable Refrigerant Flow systems for multi-zone luxury villas, commercial towers, and hotels with individual room control.",
     capacities: "Modular scalability up to 64 indoor units",
-    img: svcCommercial,
+    img: acModelVrf,
     features: ["Independent Room Control", "Maximum Energy Efficiency", "Centralized BMS Ready"],
   },
 ];
@@ -176,7 +181,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
             <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
               <div className="lg:col-span-7">
-                <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 text-sm font-medium">
+                <nav
+                  aria-label="Breadcrumb"
+                  className="mb-4 flex items-center gap-2 text-sm font-medium"
+                >
                   <Link to="/" className="text-primary transition-colors hover:underline">
                     Home
                   </Link>
@@ -198,9 +206,9 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                 </p>
 
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  Whether you are upgrading your home, fitting out a new villa, or supplying a commercial
-                  project, Summer Tech provides complete AC equipment supply, genuine manufacturer warranty,
-                  and professional commissioning across Qatar.
+                  Whether you are upgrading your home, fitting out a new villa, or supplying a
+                  commercial project, Summer Tech provides complete AC equipment supply, genuine
+                  manufacturer warranty, and professional commissioning across Qatar.
                 </p>
 
                 {/* Primary Action Buttons */}
@@ -214,15 +222,14 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                     <ArrowRight className="h-4 w-4" />
                   </button>
 
-                  <a
-                    href={waLink("Hello Summer Tech, I would like to inquire about purchasing a new AC in Qatar.")}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-3.5 text-sm font-semibold text-navy shadow-sm transition-all hover:bg-muted"
+                  <WhatsAppButton
+                    href={waLink(
+                      "Hello Summer Tech, I would like to inquire about purchasing a new AC in Qatar.",
+                    )}
+                    size="md"
                   >
-                    <span>WhatsApp Us</span>
-                    <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                  </a>
+                    WhatsApp Us
+                  </WhatsAppButton>
                 </div>
 
                 <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-muted-foreground">
@@ -243,15 +250,26 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
 
               <div className="lg:col-span-5">
                 <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-card p-2 shadow-md">
-                  <img
-                    src={svcInstallation}
-                    alt="New modern Split Air Conditioner unit"
-                    className="h-64 w-full rounded-xl object-cover sm:h-80"
-                  />
-                  <div className="absolute inset-x-4 bottom-4 rounded-xl bg-navy/90 p-4 text-white backdrop-blur-sm">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">Summer Tech Sales</p>
-                    <p className="text-sm font-bold">Residential &amp; Commercial Air Conditioners</p>
-                    <p className="mt-1 text-xs text-white/80">Delivered &amp; Installed by Certified Technicians</p>
+                  <div className="relative overflow-hidden rounded-xl bg-muted">
+                    <img
+                      src={acSalesHero}
+                      alt="New modern Split Air Conditioner unit"
+                      className="h-64 sm:h-80 lg:h-96 w-full object-cover object-[center_35%]"
+                    />
+                    <div className="absolute top-3 left-3 rounded-md bg-navy/85 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-xs shadow-sm">
+                      <span className="text-primary font-bold mr-1.5">●</span>Brand New Units
+                    </div>
+                  </div>
+                  <div className="mt-2 rounded-xl bg-navy p-3.5 sm:p-4 text-white">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                      Summer Tech Sales
+                    </p>
+                    <p className="text-sm font-bold">
+                      Residential &amp; Commercial Air Conditioners
+                    </p>
+                    <p className="mt-0.5 text-xs text-white/80">
+                      Delivered &amp; Installed by Certified Technicians across Qatar
+                    </p>
                   </div>
                 </div>
               </div>
@@ -266,28 +284,37 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
               Brands We Supply &amp; Service
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground">
-              We supply, deliver, and commission genuine air conditioners from the world’s top HVAC manufacturers.
+              We supply, deliver, and commission genuine air conditioners from the world’s top HVAC
+              manufacturers.
             </p>
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {brands.map((b) => (
-              <div
-                key={b.name}
-                className="group flex flex-col items-center justify-center rounded-xl border border-border/80 bg-card p-4 text-center shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-sm"
-              >
-                <span className="text-base font-bold text-navy transition-colors group-hover:text-primary">
-                  {b.name}
-                </span>
-                <span className="mt-1 rounded-full bg-brand-soft px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                  {b.tier}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6 rounded-xl border border-border/60 bg-brand-soft/60 px-4 py-3 text-center text-xs text-muted-foreground">
-            <strong className="text-navy">Brands List:</strong> Gree • Midea • LG • Samsung • Daikin • Carrier • O General • York • Mitsubishi Electric • Hisense • TCL • Super General
+            {brands.map((b) => {
+              const BrandLogo = brandLogoMap[b.name];
+              return (
+                <div
+                  key={b.name}
+                  className="group flex flex-col items-center justify-between rounded-xl border border-border/80 bg-card p-4 text-center shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-sm"
+                >
+                  <div className="flex h-11 w-full items-center justify-center">
+                    {BrandLogo ? (
+                      <div className="flex h-8 w-auto max-w-[120px] items-center justify-center transition-transform group-hover:scale-105">
+                        <BrandLogo className="h-7 w-auto max-h-8 max-w-[110px]" />
+                      </div>
+                    ) : (
+                      <span className="text-base font-bold text-navy transition-colors group-hover:text-primary">
+                        {b.name}
+                      </span>
+                    )}
+                  </div>
+                  <span className="mt-2 text-xs font-semibold text-navy">{b.name}</span>
+                  <span className="mt-1 rounded-full bg-brand-soft px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                    {b.tier}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -300,7 +327,8 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                   AC Models Available
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-                  Comprehensive range of cooling systems tailored to residential villas, apartments, commercial towers, and industrial facilities.
+                  Comprehensive range of cooling systems tailored to residential villas, apartments,
+                  commercial towers, and industrial facilities.
                 </p>
               </div>
               <button
@@ -353,15 +381,15 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                     </div>
 
                     <div className="mt-5 pt-3">
-                      <a
-                        href={waLink(`Hello Summer Tech, I would like to get a quote for a new ${model.title}.`)}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-soft py-2.5 text-xs font-semibold text-navy transition-colors hover:bg-primary hover:text-white"
+                      <WhatsAppButton
+                        href={waLink(
+                          `Hello Summer Tech, I would like to get a quote for a new ${model.title}.`,
+                        )}
+                        size="sm"
+                        className="w-full"
                       >
-                        <span>Inquire About {model.title}</span>
-                        <WhatsAppIcon className="h-3.5 w-3.5" />
-                      </a>
+                        Inquire About {model.title}
+                      </WhatsAppButton>
                     </div>
                   </div>
                 </div>
@@ -384,9 +412,7 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-4 text-base font-bold text-navy">{item.title}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                    {item.desc}
-                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{item.desc}</p>
                 </div>
               );
             })}
@@ -394,7 +420,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
         </section>
 
         {/* Need a New AC? Call-To-Action & Quote Section */}
-        <section id="quote-section" className="scroll-mt-20 border-t border-border/80 bg-navy py-12 text-navy-foreground sm:py-16">
+        <section
+          id="quote-section"
+          className="scroll-mt-20 border-t border-border/80 bg-navy py-12 text-navy-foreground sm:py-16"
+        >
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
               {/* Left Column: Copy & Direct Contact */}
@@ -406,7 +435,8 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                   Need a New AC?
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-navy-foreground/90">
-                  Tell us your required capacity, location and quantity. We’ll recommend the right AC and provide you with the best available price.
+                  Tell us your required capacity, location and quantity. We’ll recommend the right
+                  AC and provide you with the best available price.
                 </p>
 
                 <div className="mt-8 space-y-4">
@@ -415,11 +445,17 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-xs text-navy-foreground/70">Call Sales Advisors Directly</p>
+                      <p className="text-xs text-navy-foreground/70">
+                        Call Sales Advisors Directly
+                      </p>
                       <div className="mt-1 flex flex-wrap gap-x-3 text-sm font-bold text-white">
-                        <a href="tel:+97430771718" className="hover:text-primary transition-colors">{site.phone}</a>
+                        <a href="tel:+97430771718" className="hover:text-primary transition-colors">
+                          {site.phone}
+                        </a>
                         <span>•</span>
-                        <a href="tel:+97470294141" className="hover:text-primary transition-colors">{site.secondaryPhone}</a>
+                        <a href="tel:+97470294141" className="hover:text-primary transition-colors">
+                          {site.secondaryPhone}
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -431,7 +467,9 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                     <div>
                       <p className="text-xs text-navy-foreground/70">Instant WhatsApp Chat</p>
                       <a
-                        href={waLink("Hello Summer Tech, I would like to get a quote for a new AC.")}
+                        href={waLink(
+                          "Hello Summer Tech, I would like to get a quote for a new AC.",
+                        )}
                         target="_blank"
                         rel="noreferrer"
                         className="mt-1 inline-block text-sm font-bold text-white hover:text-[#25D366] transition-colors"
@@ -444,15 +482,14 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
 
                 {/* Direct Action Buttons */}
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href={waLink("Hello Summer Tech, I need a new AC quote with pricing and capacity recommendations.")}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                  <WhatsAppButton
+                    href={waLink(
+                      "Hello Summer Tech, I need a new AC quote with pricing and capacity recommendations.",
+                    )}
+                    size="md"
                   >
-                    <span>WhatsApp Us</span>
-                    <WhatsAppIcon className="h-4 w-4" />
-                  </a>
+                    WhatsApp Us
+                  </WhatsAppButton>
                 </div>
               </div>
 
@@ -470,18 +507,14 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                     </div>
                     <h4 className="mt-3 text-base font-bold text-white">Quote Request Prepared!</h4>
                     <p className="mt-2 text-xs text-navy-foreground/80">
-                      Thank you, <strong className="text-white">{fullName}</strong>. To send your specifications directly to our sales desk with one click, continue to WhatsApp:
+                      Thank you, <strong className="text-white">{fullName}</strong>. To send your
+                      specifications directly to our sales desk with one click, continue to
+                      WhatsApp:
                     </p>
                     <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:justify-center">
-                      <a
-                        href={getCustomSalesWaLink()}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                      >
-                        <span>Send to WhatsApp</span>
-                        <WhatsAppIcon className="h-4 w-4" />
-                      </a>
+                      <WhatsAppButton href={getCustomSalesWaLink()} size="md">
+                        Send to WhatsApp
+                      </WhatsAppButton>
                       <button
                         type="button"
                         onClick={() => {
@@ -500,7 +533,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                   <form onSubmit={handleFormSubmit} className="mt-6 space-y-4">
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       <div>
-                        <label htmlFor={`${quoteFormId}-name`} className="block text-xs font-medium text-navy-foreground/90">
+                        <label
+                          htmlFor={`${quoteFormId}-name`}
+                          className="block text-xs font-medium text-navy-foreground/90"
+                        >
                           Full Name *
                         </label>
                         <input
@@ -515,7 +551,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                       </div>
 
                       <div>
-                        <label htmlFor={`${quoteFormId}-phone`} className="block text-xs font-medium text-navy-foreground/90">
+                        <label
+                          htmlFor={`${quoteFormId}-phone`}
+                          className="block text-xs font-medium text-navy-foreground/90"
+                        >
                           Mobile Number (+974...) *
                         </label>
                         <input
@@ -532,7 +571,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
 
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                       <div>
-                        <label htmlFor={`${quoteFormId}-model`} className="block text-xs font-medium text-navy-foreground/90">
+                        <label
+                          htmlFor={`${quoteFormId}-model`}
+                          className="block text-xs font-medium text-navy-foreground/90"
+                        >
                           AC Model Required
                         </label>
                         <select
@@ -552,7 +594,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                       </div>
 
                       <div>
-                        <label htmlFor={`${quoteFormId}-capacity`} className="block text-xs font-medium text-navy-foreground/90">
+                        <label
+                          htmlFor={`${quoteFormId}-capacity`}
+                          className="block text-xs font-medium text-navy-foreground/90"
+                        >
                           Capacity (Tonnage)
                         </label>
                         <select
@@ -572,7 +617,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                       </div>
 
                       <div>
-                        <label htmlFor={`${quoteFormId}-qty`} className="block text-xs font-medium text-navy-foreground/90">
+                        <label
+                          htmlFor={`${quoteFormId}-qty`}
+                          className="block text-xs font-medium text-navy-foreground/90"
+                        >
                           Quantity
                         </label>
                         <select
@@ -590,7 +638,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                     </div>
 
                     <div>
-                      <label htmlFor={`${quoteFormId}-location`} className="block text-xs font-medium text-navy-foreground/90">
+                      <label
+                        htmlFor={`${quoteFormId}-location`}
+                        className="block text-xs font-medium text-navy-foreground/90"
+                      >
                         Delivery / Installation Location in Qatar
                       </label>
                       <input
@@ -604,7 +655,10 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                     </div>
 
                     <div>
-                      <label htmlFor={`${quoteFormId}-notes`} className="block text-xs font-medium text-navy-foreground/90">
+                      <label
+                        htmlFor={`${quoteFormId}-notes`}
+                        className="block text-xs font-medium text-navy-foreground/90"
+                      >
                         Additional Requirements (Brand preference, installation required, etc.)
                       </label>
                       <textarea
