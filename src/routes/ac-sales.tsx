@@ -430,25 +430,14 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
                     </div>
                     <div>
                       <p className="text-xs text-navy-foreground/70">Instant WhatsApp Chat</p>
-                      <div className="mt-1 flex flex-wrap gap-x-3 text-sm font-bold text-white">
-                        <a
-                          href={waLink("Hello Summer Tech, I would like to get a quote for a new AC.", site.whatsappNumber)}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="hover:text-[#25D366] transition-colors"
-                        >
-                          {site.whatsapp}
-                        </a>
-                        <span>•</span>
-                        <a
-                          href={waLink("Hello Summer Tech, I would like to get a quote for a new AC.", site.whatsappSecondaryNumber)}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="hover:text-[#25D366] transition-colors"
-                        >
-                          {site.whatsappSecondary}
-                        </a>
-                      </div>
+                      <a
+                        href={waLink("Hello Summer Tech, I would like to get a quote for a new AC.")}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-1 inline-block text-sm font-bold text-white hover:text-[#25D366] transition-colors"
+                      >
+                        Chat with Sales on WhatsApp
+                      </a>
                     </div>
                   </div>
                 </div>

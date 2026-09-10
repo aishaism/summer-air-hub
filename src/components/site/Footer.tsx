@@ -144,27 +144,15 @@ export function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-2 text-navy-foreground/80">
-                <WhatsAppIcon className="mt-0.5 h-3.5 w-3.5 text-primary shrink-0" />
-                <div className="flex flex-col gap-0.5">
-                  <a
-                    href={waLink("Hello Summer Tech, I would like to inquire about your AC services.", site.whatsappNumber)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="transition-colors hover:text-white"
-                  >
-                    {site.whatsapp}
-                  </a>
-                  <a
-                    href={waLink("Hello Summer Tech, I would like to inquire about your AC services.", site.whatsappSecondaryNumber)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="transition-colors hover:text-white"
-                  >
-                    {site.whatsappSecondary}
-                  </a>
-                </div>
-              </div>
+              <a
+                href={waLink("Hello Summer Tech, I would like to inquire about your AC services.")}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-navy-foreground/80 transition-colors hover:text-white"
+              >
+                <WhatsAppIcon className="h-3.5 w-3.5 text-primary shrink-0" />
+                <span>WhatsApp Chat</span>
+              </a>
 
               <a
                 href={`mailto:${site.email}`}

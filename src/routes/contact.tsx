@@ -142,33 +142,23 @@ ${message ? `- Notes: ${message}` : ""}`;
             </div>
 
             {/* WhatsApp */}
-            <div className="flex flex-col rounded-2xl border border-border/80 bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+            <a
+              href={waLink("Hello Summer Tech, I would like to inquire about AC services.")}
+              target="_blank"
+              rel="noreferrer"
+              className="flex flex-col rounded-2xl border border-border/80 bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+            >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-primary">
                 <WhatsAppIcon className="h-6 w-6" />
               </div>
               <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 WhatsApp Chat
               </p>
-              <div className="mt-2 flex flex-col gap-1">
-                <a
-                  href={waLink("Hello Summer Tech, I would like to inquire about AC services.", site.whatsappNumber)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-base font-bold text-navy hover:text-primary transition-colors"
-                >
-                  {site.whatsapp}
-                </a>
-                <a
-                  href={waLink("Hello Summer Tech, I would like to inquire about AC services.", site.whatsappSecondaryNumber)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-base font-bold text-navy hover:text-primary transition-colors"
-                >
-                  {site.whatsappSecondary}
-                </a>
-              </div>
+              <p className="mt-2 text-base font-bold text-navy hover:text-primary transition-colors">
+                Chat on WhatsApp
+              </p>
               <p className="mt-2 text-xs text-muted-foreground">Fastest response for urgent requests</p>
-            </div>
+            </a>
 
             {/* Email */}
             <a
@@ -343,28 +333,15 @@ ${message ? `- Notes: ${message}` : ""}`;
                   on-duty service team for immediate advice and dispatch.
                 </p>
 
-                <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
-                  <a
-                    href={waLink("Hello Summer Tech, I need immediate AC assistance.", site.whatsappNumber)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-                  >
-                    <span>WhatsApp</span>
-                    <span className="font-mono text-xs opacity-90">{site.phone}</span>
-                    <WhatsAppIcon className="h-4 w-4 shrink-0" />
-                  </a>
-                  <a
-                    href={waLink("Hello Summer Tech, I need immediate AC assistance.", site.whatsappSecondaryNumber)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 px-4 py-3.5 text-sm font-semibold text-white transition-colors"
-                  >
-                    <span>WhatsApp</span>
-                    <span className="font-mono text-xs opacity-90">{site.secondaryPhone}</span>
-                    <WhatsAppIcon className="h-4 w-4 shrink-0" />
-                  </a>
-                </div>
+                <a
+                  href={waLink("Hello Summer Tech, I need immediate AC assistance.")}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                >
+                  Chat with Technician Now
+                  <WhatsAppIcon className="h-4 w-4" />
+                </a>
               </div>
 
               {/* Service Commitments */}
