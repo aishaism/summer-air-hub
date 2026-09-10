@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AcSalesRouteImport } from './routes/ac-sales'
 import { Route as AmcRouteImport } from './routes/amc'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ServicesRouteImport } from './routes/services'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcSalesRoute = AcSalesRouteImport.update({
+  id: '/ac-sales',
+  path: '/ac-sales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AmcRoute = AmcRouteImport.update({
@@ -44,6 +50,7 @@ const ServicesRoute = ServicesRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ac-sales': typeof AcSalesRoute
   '/amc': typeof AmcRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ac-sales': typeof AcSalesRoute
   '/amc': typeof AmcRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
@@ -59,21 +67,30 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ac-sales': typeof AcSalesRoute
   '/amc': typeof AmcRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/amc' | '/contact' | '/services'
+  fullPaths: '/' | '/about' | '/ac-sales' | '/amc' | '/contact' | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/amc' | '/contact' | '/services'
-  id: '__root__' | '/' | '/about' | '/amc' | '/contact' | '/services'
+  to: '/' | '/about' | '/ac-sales' | '/amc' | '/contact' | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/ac-sales'
+    | '/amc'
+    | '/contact'
+    | '/services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AcSalesRoute: typeof AcSalesRoute
   AmcRoute: typeof AmcRoute
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
@@ -93,6 +110,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ac-sales': {
+      id: '/ac-sales'
+      path: '/ac-sales'
+      fullPath: '/ac-sales'
+      preLoaderRoute: typeof AcSalesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/amc': {
@@ -122,6 +146,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AcSalesRoute: AcSalesRoute,
   AmcRoute: AmcRoute,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,

@@ -7,6 +7,7 @@ import { waLink } from "@/lib/site";
 const nav = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
+  { label: "AC Sales", to: "/ac-sales" },
   { label: "AMC", to: "/amc" },
   { label: "About Us", to: "/about" },
   { label: "Contact Us", to: "/contact" },

@@ -626,7 +626,7 @@ Before finishing, check the page on both desktop and mobile and fix any layout i
 
 ## Summer Tech Maintenance Solutions W.L.L.
 
-Official website for Summer Tech Maintenance Solutions W.L.L., delivering certified residential and commercial air conditioning and HVAC maintenance, emergency diagnostics, and Annual Maintenance Contracts (AMC) across the Kingdom of Bahrain.
+Official website for Summer Tech Maintenance Solutions W.L.L., delivering certified residential and commercial air conditioning and HVAC maintenance, emergency diagnostics, and Annual Maintenance Contracts (AMC) across the State of Qatar.
 
 
 ## Development

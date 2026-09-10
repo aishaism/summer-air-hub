@@ -15,6 +15,7 @@ import { site, waLink } from "@/lib/site";
 const quickLinks = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
+  { label: "AC Sales", to: "/ac-sales" },
   { label: "AMC", to: "/amc" },
   { label: "About Us", to: "/about" },
   { label: "Contact Us", to: "/contact" },
@@ -26,23 +27,19 @@ const serviceLinks = [
   { label: "AC Cleaning", to: "/services" },
   { label: "AC Maintenance", to: "/services" },
   { label: "Commercial HVAC", to: "/services" },
+  { label: "Kitchen Equipment & Refrigeration", to: "/services" },
 ] as const;
 
 const socialLinks = [
   {
-    name: "Facebook",
-    href: "https://facebook.com",
-    icon: Facebook,
-  },
-  {
     name: "Instagram",
-    href: "https://instagram.com",
+    href: site.social.instagram,
     icon: Instagram,
   },
   {
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: Linkedin,
+    name: "Facebook",
+    href: site.social.facebook,
+    icon: Facebook,
   },
   {
     name: "WhatsApp",
@@ -128,24 +125,46 @@ export function Footer() {
           {/* Column 4: Contact (lg:col-span-3) */}
           <div className="lg:col-span-3">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-white">Contact</h4>
-            <div className="mt-3 grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 lg:grid-cols-1">
-              <a
-                href={`tel:${site.phone.replace(/\s+/g, "")}`}
-                className="inline-flex items-center gap-2 text-navy-foreground/80 transition-colors hover:text-white"
-              >
-                <Phone className="h-3.5 w-3.5 text-primary shrink-0" />
-                <span>{site.phone}</span>
-              </a>
+            <div className="mt-3 grid grid-cols-1 gap-2.5 text-xs sm:grid-cols-2 lg:grid-cols-1">
+              <div className="flex items-start gap-2 text-navy-foreground/80">
+                <Phone className="mt-0.5 h-3.5 w-3.5 text-primary shrink-0" />
+                <div className="flex flex-col gap-0.5">
+                  <a
+                    href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                    className="transition-colors hover:text-white"
+                  >
+                    {site.phone}
+                  </a>
+                  <a
+                    href={`tel:${site.secondaryPhone.replace(/\s+/g, "")}`}
+                    className="transition-colors hover:text-white"
+                  >
+                    {site.secondaryPhone}
+                  </a>
+                </div>
+              </div>
 
-              <a
-                href={waLink("Hello Summer Tech, I would like to inquire about your AC services.")}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-navy-foreground/80 transition-colors hover:text-white"
-              >
-                <WhatsAppIcon className="h-3.5 w-3.5 text-primary shrink-0" />
-                <span>{site.whatsapp}</span>
-              </a>
+              <div className="flex items-start gap-2 text-navy-foreground/80">
+                <WhatsAppIcon className="mt-0.5 h-3.5 w-3.5 text-primary shrink-0" />
+                <div className="flex flex-col gap-0.5">
+                  <a
+                    href={waLink("Hello Summer Tech, I would like to inquire about your AC services.", site.whatsappNumber)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition-colors hover:text-white"
+                  >
+                    {site.whatsapp}
+                  </a>
+                  <a
+                    href={waLink("Hello Summer Tech, I would like to inquire about your AC services.", site.whatsappSecondaryNumber)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition-colors hover:text-white"
+                  >
+                    {site.whatsappSecondary}
+                  </a>
+                </div>
+              </div>
 
               <a
                 href={`mailto:${site.email}`}

@@ -15,6 +15,7 @@ import svcElectrical from "@/assets/svc-electrical.jpg";
 import svcCompressor from "@/assets/svc-compressor.jpg";
 import svcFcu from "@/assets/svc-fcu.jpg";
 import svcCommercial from "@/assets/svc-commercial.jpg";
+import svcKitchen from "@/assets/svc-kitchen.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Complete AC & HVAC services in Qatar: installation, maintenance, cleaning, repair, refrigerant, electrical, compressor, FCU and commercial HVAC.",
+          "Complete AC, HVAC and commercial refrigeration services in Qatar: installation, maintenance, cleaning, repair, refrigerant, commercial HVAC, and kitchen equipment servicing.",
       },
       { property: "og:title", content: "Our Services — Summer Tech AC & HVAC" },
       {
@@ -137,6 +138,18 @@ const services = [
     title: "Commercial HVAC Services",
     img: svcCommercial,
     items: ["Offices", "Villas", "Apartments", "Shops", "Restaurants", "Commercial Buildings"],
+  },
+  {
+    title: "Kitchen Equipment & Refrigeration",
+    img: svcKitchen,
+    items: [
+      "Commercial kitchen equipment & cooking ranges",
+      "Walk-in chillers, freezers & cold storage rooms",
+      "Under-counter refrigerators & display chillers",
+      "Preventive maintenance & safety inspections",
+      "Thermostat calibration & temperature optimization",
+      "Emergency breakdown troubleshooting & repair",
+    ],
   },
 ];
 
