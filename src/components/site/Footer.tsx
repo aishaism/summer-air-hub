@@ -27,7 +27,7 @@ const serviceLinks = [
   { label: "AC Cleaning", to: "/services" },
   { label: "AC Maintenance", to: "/services" },
   { label: "Commercial HVAC", to: "/services" },
-  { label: "Kitchen Equipment & Refrigeration", to: "/services" },
+  { label: "Kitchen Equipment & Refrigeration", to: "/kitchen-equipment-services" },
 ] as const;
 
 const socialLinks = [

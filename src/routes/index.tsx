@@ -13,6 +13,7 @@ import {
   Settings,
   Sparkles,
   Store,
+  ThermometerSnowflake,
   UtensilsCrossed,
   Users,
 } from "lucide-react";
@@ -31,6 +32,7 @@ import svcCleaning from "@/assets/svc-cleaning.jpg";
 import svcMaintenance from "@/assets/svc-maintenance.jpg";
 import svcRefrigerant from "@/assets/svc-refrigerant.jpg";
 import svcCommercial from "@/assets/svc-commercial.jpg";
+import commercialRefrigerationImg from "@/assets/commercial-refrigeration.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -332,41 +334,105 @@ function Index() {
                 Our Main Services
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Complete AC &amp; HVAC solutions under one roof.
+                Commercial refrigeration, kitchen equipment, and complete AC &amp; HVAC solutions under one roof.
               </p>
             </div>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-              {services.map((s) => (
-                <article
-                  key={s.title}
-                  className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-xs transition-all duration-200 hover:shadow-md hover:border-primary/40"
-                >
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    loading="lazy"
-                    width={600}
-                    height={512}
-                    className="h-32 w-full object-cover"
-                  />
-                  <div className="flex flex-1 flex-col p-4 text-center">
-                    <h3 className="text-sm font-bold text-navy">{s.title}</h3>
-                    <p className="mt-2 flex-1 text-xs leading-relaxed text-muted-foreground">
-                      {s.desc}
-                    </p>
-                    <a
-                      href={waLink(`Hello Summer Tech, I need ${s.title}.`)}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-4 inline-flex items-center justify-center gap-2 text-xs font-semibold text-primary hover:underline"
-                    >
-                      Request Service
-                      <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                    </a>
+            {/* CORE BUSINESS OPERATION: Kitchen Equipment & Commercial Refrigeration */}
+            <article className="mt-10 overflow-hidden rounded-2xl border-2 border-primary/40 bg-card p-6 shadow-md transition-all duration-200 hover:border-primary sm:p-8">
+              <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-12 lg:gap-8">
+                <div className="flex flex-col lg:col-span-8">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/15 border border-primary/30 px-3 py-1 text-xs font-bold text-primary">
+                      <ThermometerSnowflake className="h-3.5 w-3.5 text-primary shrink-0" />
+                      Core Business Operation
+                    </span>
+                    <span className="rounded-md border border-border bg-brand-soft px-2 py-0.5 text-[11px] font-semibold text-navy">
+                      Commercial Refrigeration Focus
+                    </span>
                   </div>
-                </article>
-              ))}
+
+                  <h3 className="mt-3 text-xl font-extrabold text-navy sm:text-2xl lg:text-3xl">
+                    Kitchen Equipment &amp; Refrigeration Services
+                  </h3>
+
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm max-w-2xl">
+                    Commercial refrigeration is our primary focus. We provide rapid emergency diagnostics, part replacement, and scheduled preventive maintenance for commercial refrigerators, chillers, freezers, display coolers, and commercial kitchen lines in Qatar.
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                    <WhatsAppButton
+                      href={waLink("Hello Summer Tech, I would like to request Commercial Refrigerator Service.")}
+                      size="sm"
+                      className="rounded-xl shadow-xs"
+                    >
+                      Request Refrigerator Service
+                    </WhatsAppButton>
+                    <Link
+                      to="/kitchen-equipment-services"
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-primary/40 bg-background px-4 py-2 text-xs font-semibold text-primary transition-colors hover:bg-brand-soft"
+                    >
+                      Explore Kitchen Services
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="relative lg:col-span-4">
+                  <img
+                    src={commercialRefrigerationImg}
+                    alt="Technician servicing commercial kitchen refrigeration equipment in Qatar"
+                    width={600}
+                    height={400}
+                    loading="lazy"
+                    className="h-44 w-full rounded-xl border border-border/80 object-cover sm:h-52"
+                  />
+                  <div className="absolute bottom-2 left-2 right-2 rounded-lg bg-navy/90 p-2 text-center text-white backdrop-blur-xs">
+                    <p className="text-[11px] font-semibold">Chillers • Freezers • Cold Rooms • Ovens</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* AC Services Grid */}
+            <div className="mt-8">
+              <div className="mb-4 flex items-center justify-between">
+                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  Air Conditioning &amp; HVAC Services
+                </p>
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+                {services.map((s) => (
+                  <article
+                    key={s.title}
+                    className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-xs transition-all duration-200 hover:shadow-md hover:border-primary/40"
+                  >
+                    <img
+                      src={s.img}
+                      alt={s.title}
+                      loading="lazy"
+                      width={600}
+                      height={512}
+                      className="h-32 w-full object-cover"
+                    />
+                    <div className="flex flex-1 flex-col p-4 text-center">
+                      <h3 className="text-sm font-bold text-navy">{s.title}</h3>
+                      <p className="mt-2 flex-1 text-xs leading-relaxed text-muted-foreground">
+                        {s.desc}
+                      </p>
+                      <a
+                        href={waLink(`Hello Summer Tech, I need ${s.title}.`)}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-4 inline-flex items-center justify-center gap-2 text-xs font-semibold text-primary hover:underline"
+                      >
+                        Request Service
+                        <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                      </a>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
 
             <div className="mt-10 flex justify-center">

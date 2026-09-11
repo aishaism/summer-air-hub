@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AcSalesRouteImport } from './routes/ac-sales'
 import { Route as AmcRouteImport } from './routes/amc'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as KitchenEquipmentServicesRouteImport } from './routes/kitchen-equipment-services'
 import { Route as ServicesRouteImport } from './routes/services'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,12 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KitchenEquipmentServicesRoute =
+  KitchenEquipmentServicesRouteImport.update({
+    id: '/kitchen-equipment-services',
+    path: '/kitchen-equipment-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -53,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/ac-sales': typeof AcSalesRoute
   '/amc': typeof AmcRoute
   '/contact': typeof ContactRoute
+  '/kitchen-equipment-services': typeof KitchenEquipmentServicesRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +69,7 @@ export interface FileRoutesByTo {
   '/ac-sales': typeof AcSalesRoute
   '/amc': typeof AmcRoute
   '/contact': typeof ContactRoute
+  '/kitchen-equipment-services': typeof KitchenEquipmentServicesRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesById {
@@ -70,13 +79,28 @@ export interface FileRoutesById {
   '/ac-sales': typeof AcSalesRoute
   '/amc': typeof AmcRoute
   '/contact': typeof ContactRoute
+  '/kitchen-equipment-services': typeof KitchenEquipmentServicesRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/ac-sales' | '/amc' | '/contact' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/ac-sales'
+    | '/amc'
+    | '/contact'
+    | '/kitchen-equipment-services'
+    | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/ac-sales' | '/amc' | '/contact' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/ac-sales'
+    | '/amc'
+    | '/contact'
+    | '/kitchen-equipment-services'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -84,6 +108,7 @@ export interface FileRouteTypes {
     | '/ac-sales'
     | '/amc'
     | '/contact'
+    | '/kitchen-equipment-services'
     | '/services'
   fileRoutesById: FileRoutesById
 }
@@ -93,6 +118,7 @@ export interface RootRouteChildren {
   AcSalesRoute: typeof AcSalesRoute
   AmcRoute: typeof AmcRoute
   ContactRoute: typeof ContactRoute
+  KitchenEquipmentServicesRoute: typeof KitchenEquipmentServicesRoute
   ServicesRoute: typeof ServicesRoute
 }
 
@@ -133,6 +159,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kitchen-equipment-services': {
+      id: '/kitchen-equipment-services'
+      path: '/kitchen-equipment-services'
+      fullPath: '/kitchen-equipment-services'
+      preLoaderRoute: typeof KitchenEquipmentServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -149,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcSalesRoute: AcSalesRoute,
   AmcRoute: AmcRoute,
   ContactRoute: ContactRoute,
+  KitchenEquipmentServicesRoute: KitchenEquipmentServicesRoute,
   ServicesRoute: ServicesRoute,
 }
 export const routeTree = rootRouteImport
