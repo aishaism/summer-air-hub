@@ -11,8 +11,8 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { WhatsAppIcon } from "@/components/site/icons";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { PageHero } from "@/components/site/PageHero";
 import { waLink } from "@/lib/site";
 
 import amcHero from "@/assets/amc-hero.jpg";
@@ -264,54 +264,26 @@ function AmcPage() {
       <Header />
 
       <main className="flex-1">
-        {/* Page Title & Breadcrumb Header */}
-        <section className="mx-auto w-full max-w-7xl px-4 pt-8 pb-4 sm:px-6 sm:pt-10">
-          <h1 className="text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-            Annual Maintenance Contract (AMC)
-          </h1>
-          <nav aria-label="Breadcrumb" className="mt-2 flex items-center gap-2 text-sm font-medium">
-            <Link to="/" className="text-primary transition-colors hover:underline">
-              Home
-            </Link>
-            <ChevronRight className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-            <span className="text-primary">AMC</span>
-          </nav>
-        </section>
-
-        {/* Large Dark Navy AMC Hero */}
-        <section className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6">
-          <div className="relative overflow-hidden rounded-2xl bg-navy text-navy-foreground shadow-lg sm:rounded-3xl">
-            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
-              <div className="z-10 p-6 sm:p-10 lg:py-14 lg:pl-12 lg:pr-6">
-                <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-[42px]">
-                  Reliable AC Performance,
-                  <br />
-                  Year After Year
-                </h2>
-                <p className="mt-4 max-w-lg text-sm leading-relaxed text-navy-foreground/80 sm:text-base">
-                  Annual Maintenance Contract (AMC) helps keep your AC systems reliable, efficient
-                  and ready throughout the year.
-                </p>
-                <div className="mt-8">
-                  <WhatsAppButton href={amcQuoteLink} size="lg" className="rounded-full">
-                    Get an AMC Quote
-                  </WhatsAppButton>
-                </div>
-              </div>
-
-              <div className="relative h-64 w-full overflow-hidden sm:h-80 lg:h-[380px]">
-                <img
-                  src={amcHero}
-                  alt="Summer Tech technician servicing a wall-mounted AC unit"
-                  width={1200}
-                  height={800}
-                  className="h-full w-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent lg:hidden" />
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Uniform Hero */}
+        <PageHero
+          title="Annual Maintenance Contract (AMC)"
+          description="Reliable maintenance to keep your AC systems efficient and ready throughout the year. Comprehensive preventive care, priority support, and scheduled AC inspections in Qatar."
+          breadcrumb={[
+            { label: "Home", href: "/" },
+            { label: "AMC" },
+          ]}
+          actions={
+            <WhatsAppButton href={amcQuoteLink} size="md">
+              Get an AMC Quote
+            </WhatsAppButton>
+          }
+          image={{
+            src: amcHero,
+            alt: "Summer Tech technician servicing a wall-mounted AC unit",
+            badgeText: "Reliable AC Performance, Year After Year",
+            badgeSubtext: "Summer Tech AMC",
+          }}
+        />
 
         {/* "What's Included in AMC?" & "Benefits of AMC" */}
         <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16">

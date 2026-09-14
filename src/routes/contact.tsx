@@ -15,7 +15,9 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { PageHero } from "@/components/site/PageHero";
 import { site, waLink } from "@/lib/site";
+import ctaTechnician from "@/assets/cta-technician.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -100,19 +102,40 @@ ${message ? `- Notes: ${message}` : ""}`;
       <Header />
 
       <main className="flex-1">
-        {/* Page Title & Breadcrumb Header */}
-        <section className="mx-auto w-full max-w-7xl px-4 pt-8 pb-4 sm:px-6 sm:pt-10">
-          <h1 className="text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-            Let's Get Your AC Working Right
-          </h1>
-          <nav aria-label="Breadcrumb" className="mt-2 flex items-center gap-2 text-sm font-medium">
-            <Link to="/" className="text-primary transition-colors hover:underline">
-              Home
-            </Link>
-            <ChevronRight className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-            <span className="text-primary">Contact Us</span>
-          </nav>
-        </section>
+        {/* Uniform Hero */}
+        <PageHero
+          title="Contact Us"
+          description="Let's get your AC working right. Our certified technicians provide fast AC repair, installation, maintenance, and AMC support across Doha and all of Qatar."
+          breadcrumb={[
+            { label: "Home", href: "/" },
+            { label: "Contact Us" },
+          ]}
+          actions={
+            <>
+              <WhatsAppButton
+                href={waLink("Hello Summer Tech, I would like to get in touch regarding your AC & HVAC services.")}
+                size="md"
+              >
+                Chat on WhatsApp
+              </WhatsAppButton>
+              <a
+                href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-background px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-brand-soft"
+              >
+                <Phone className="h-4 w-4" />
+                <span>Call {site.phone}</span>
+              </a>
+            </>
+          }
+          image={{
+            src: ctaTechnician,
+            alt: "Summer Tech technician ready to assist across Qatar",
+            badgeText: "Fast Emergency Dispatch Across Qatar",
+            badgeSubtext: "Customer Support & Dispatch",
+            className: "h-56 sm:h-72 lg:h-[340px] w-full object-contain object-bottom pt-4",
+            bgClassName: "bg-gradient-to-t from-brand-soft via-muted/30 to-background",
+          }}
+        />
 
         {/* Contact Information Quick Cards */}
         <section className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6">

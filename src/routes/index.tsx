@@ -21,6 +21,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { PageHero } from "@/components/site/PageHero";
 import { waLink } from "@/lib/site";
 
 import heroImg from "@/assets/hero-technician.jpg";
@@ -166,128 +167,55 @@ function Index() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        {/* HERO */}
-        <section className="bg-gradient-to-r from-brand-soft to-background">
-          {/* Mobile Hero View (< lg) */}
-          <div className="flex flex-col px-4 py-8 sm:px-6 sm:py-10 lg:hidden">
-            {/* 1. Heading & 2. Description */}
-            <div>
-              <h1 className="text-3xl font-extrabold leading-[1.15] tracking-tight text-navy sm:text-4xl">
-                Professional
-                <br />
-                <span className="text-primary">AC &amp; HVAC</span>
-                <br />
-                Solutions You
-                <br />
-                Can Rely On
-              </h1>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Reliable installation, maintenance, repair and HVAC services for residential and
-                commercial properties.
-              </p>
-            </div>
-
-            {/* 3. Existing hero image */}
-            <div className="mt-5">
-              <img
-                src={heroImg}
-                alt="Summer Tech technician servicing a wall-mounted air conditioner"
-                width={1200}
-                height={912}
-                className="h-52 w-full rounded-xl object-cover sm:h-72"
-              />
-            </div>
-
-            {/* 4. Request Service + Explore Services buttons (single row, side by side) */}
-            <div className="mt-5 flex w-full flex-row items-center gap-2.5 sm:gap-3">
-              <WhatsAppButton href={requestLink} size="sm" className="flex-1 whitespace-nowrap">
+        {/* Uniform Hero */}
+        <PageHero
+          badge={{
+            text: "Doha, State of Qatar • AC & HVAC Maintenance Solutions",
+            icon: ShieldCheck,
+          }}
+          title={
+            <>
+              Professional <span className="text-primary">AC &amp; HVAC</span> Solutions You Can Rely On
+            </>
+          }
+          description="Reliable installation, maintenance, repair and HVAC services for residential and commercial properties in Qatar."
+          actions={
+            <>
+              <WhatsAppButton href={requestLink} size="md">
                 Request Service
               </WhatsAppButton>
               <Link
                 to="/services"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-primary bg-background px-3 py-2.5 text-xs font-semibold text-primary transition-colors hover:bg-brand-soft text-center whitespace-nowrap"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-background px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-brand-soft"
               >
                 <span>Explore Services</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
-            </div>
-
-            {/* 5. Experienced Technicians + Fast Response + Quality Workmanship (single horizontal row) */}
-            <div className="mt-5 grid w-full grid-cols-3 gap-2 border-t border-border/60 pt-4">
+            </>
+          }
+          extra={
+            <div className="grid grid-cols-3 gap-3 border-t border-border/70 pt-5 text-center sm:text-left">
               {[
                 { icon: BadgeCheck, a: "Experienced", b: "Technicians" },
                 { icon: Clock, a: "Fast", b: "Response" },
                 { icon: Gauge, a: "Quality", b: "Workmanship" },
               ].map((t) => (
-                <div
-                  key={t.b}
-                  className="flex min-w-0 items-center justify-center gap-1.5 text-center"
-                >
-                  <t.icon className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.75} />
-                  <p className="text-[11px] font-semibold leading-[1.15] text-navy">
-                    {t.a}
-                    <br />
-                    {t.b}
+                <div key={t.b} className="flex flex-col sm:flex-row items-center gap-2">
+                  <t.icon className="h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
+                  <p className="text-xs font-semibold leading-tight text-navy">
+                    {t.a} {t.b}
                   </p>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Desktop Hero View (lg+) - 100% untouched layout */}
-          <div className="mx-auto hidden max-w-7xl items-center gap-6 px-6 lg:grid lg:grid-cols-2 lg:py-0">
-            <div className="lg:py-16">
-              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-navy sm:text-5xl">
-                Professional
-                <br />
-                <span className="text-primary">AC &amp; HVAC</span>
-                <br />
-                Solutions You
-                <br />
-                Can Rely On
-              </h1>
-              <p className="mt-5 max-w-md text-base text-muted-foreground">
-                Reliable installation, maintenance, repair and HVAC services for residential and
-                commercial properties.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <WhatsAppButton href={requestLink} size="md">
-                  Request Service
-                </WhatsAppButton>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 rounded-lg border border-primary bg-background px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-brand-soft"
-                >
-                  Explore Services
-                </Link>
-              </div>
-              <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
-                {[
-                  { icon: BadgeCheck, a: "Experienced", b: "Technicians" },
-                  { icon: Clock, a: "Fast", b: "Response" },
-                  { icon: Gauge, a: "Quality", b: "Workmanship" },
-                ].map((t) => (
-                  <div key={t.b} className="flex min-w-0 items-center gap-3">
-                    <t.icon className="h-7 w-7 shrink-0 text-primary" strokeWidth={1.5} />
-                    <p className="text-sm font-medium leading-tight text-navy">
-                      {t.a}
-                      <br />
-                      {t.b}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative lg:mr-[calc((100%-100vw)/2)]">
-              <img
-                src={heroImg}
-                alt="Summer Tech technician servicing a wall-mounted air conditioner"
-                width={1200}
-                height={912}
-                className="h-64 w-full rounded-xl object-cover sm:h-80 lg:h-[540px] lg:rounded-none"
-              />
-            </div>
-          </div>
-        </section>
+          }
+          image={{
+            src: heroImg,
+            alt: "Summer Tech technician servicing a wall-mounted air conditioner",
+            badgeText: "Certified AC & HVAC Technicians across Qatar",
+            badgeSubtext: "Summer Tech Qatar",
+          }}
+        />
 
         {/* 2. WHY CHOOSE SUMMER TECH? */}
         <section className="bg-background py-10 sm:py-20 border-b border-border/40">

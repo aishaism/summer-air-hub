@@ -1,15 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  ChevronRight,
   ArrowRight,
   ThermometerSnowflake,
-  Sparkles,
   CheckCircle2,
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { WhatsAppIcon } from "@/components/site/icons";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { PageHero } from "@/components/site/PageHero";
 import { waLink } from "@/lib/site";
 
 import servicesHero from "@/assets/services-hero.jpg";
@@ -17,7 +15,6 @@ import svcInstallation from "@/assets/svc-installation.jpg";
 import svcMaintenance from "@/assets/svc-maintenance.jpg";
 import svcCleaning from "@/assets/svc-cleaning.jpg";
 import svcRepair from "@/assets/svc-repair.jpg";
-import svcRefrigerant from "@/assets/svc-refrigerant.jpg";
 import svcElectrical from "@/assets/svc-electrical.jpg";
 import svcCompressor from "@/assets/svc-compressor.jpg";
 import svcFcu from "@/assets/svc-fcu.jpg";
@@ -31,7 +28,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Complete AC, HVAC and commercial refrigeration services in Qatar: installation, maintenance, cleaning, repair, refrigerant, commercial HVAC, and kitchen equipment servicing.",
+          "Complete AC, HVAC, and commercial kitchen refrigeration services in Qatar: installation, maintenance, cleaning, repair, commercial HVAC, and dedicated kitchen equipment servicing.",
       },
       { property: "og:title", content: "Our Services — Summer Tech AC & HVAC" },
       {
@@ -105,17 +102,6 @@ const acServices = [
     ],
   },
   {
-    title: "Refrigerant Services",
-    img: svcRefrigerant,
-    items: [
-      "Gas Charging",
-      "Gas Leak Detection",
-      "Leak Repair",
-      "Refrigerant Pressure Checking",
-      "Vacuuming & Recharging",
-    ],
-  },
-  {
     title: "Electrical & Control Services",
     img: svcElectrical,
     items: [
@@ -166,46 +152,47 @@ function ServicesPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        {/* Hero */}
-        <section className="overflow-hidden bg-brand-soft">
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:py-0">
-            <div className="lg:py-14">
-              <h1 className="text-4xl font-extrabold tracking-tight text-navy sm:text-5xl">
-                Our Services
-              </h1>
-              <nav
-                aria-label="Breadcrumb"
-                className="mt-4 flex items-center gap-2 text-sm font-medium"
+        {/* Uniform Hero */}
+        <PageHero
+          title="Our Services"
+          description="Complete AC & HVAC services to keep your systems running efficiently all year round."
+          breadcrumb={[
+            { label: "Home", href: "/" },
+            { label: "Services" },
+          ]}
+          actions={
+            <>
+              <WhatsAppButton
+                href={waLink("Hello Summer Tech, I would like to request an AC service.")}
+                size="md"
               >
-                <Link to="/" className="text-primary hover:underline">
-                  Home
-                </Link>
-                <ChevronRight className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                <span className="text-primary">Services</span>
-              </nav>
-              <p className="mt-5 max-w-md text-base text-muted-foreground">
-                Complete AC, HVAC, and commercial kitchen refrigeration services to keep your systems
-                operating smoothly all year round.
-              </p>
-            </div>
-
-            <div className="relative lg:mr-[calc((100%-100vw)/2)]">
-              <img
-                src={servicesHero}
-                alt="Technician servicing a ceiling cassette air conditioner"
-                width={1000}
-                height={760}
-                className="h-56 w-full rounded-xl object-cover sm:h-72 lg:h-[340px] lg:rounded-none"
-              />
-            </div>
-          </div>
-        </section>
+                Request Service
+              </WhatsAppButton>
+              <a
+                href="#kitchen-equipment-core"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-background px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-brand-soft"
+              >
+                Kitchen Equipment Services
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </>
+          }
+          image={{
+            src: servicesHero,
+            alt: "Technician servicing a ceiling cassette air conditioner",
+            badgeText: "AC & HVAC Maintenance in Qatar",
+            badgeSubtext: "Summer Tech Services",
+          }}
+        />
 
         {/* Service cards */}
-        <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
+        <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {/* FEATURED: Kitchen Equipment & Refrigeration (Core Business Operation) */}
-            <article className="lg:col-span-2 relative flex flex-col justify-between gap-6 rounded-2xl border-2 border-primary/40 bg-gradient-to-br from-card via-brand-soft/40 to-card p-6 shadow-md transition-all duration-200 hover:border-primary sm:flex-row sm:items-center sm:p-8">
+            {/* FEATURED: Kitchen Equipment Services (Core Business Operation) */}
+            <article
+              id="kitchen-equipment-core"
+              className="lg:col-span-2 relative flex flex-col justify-between gap-6 rounded-2xl border-2 border-primary/40 bg-gradient-to-br from-card via-brand-soft/40 to-card p-6 shadow-md transition-all duration-200 hover:border-primary sm:flex-row sm:items-center sm:p-8"
+            >
               <div className="flex min-w-0 flex-1 flex-col">
                 <div className="flex flex-wrap items-center gap-2.5">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/15 border border-primary/30 px-3 py-1 text-xs font-bold text-primary">
@@ -218,11 +205,11 @@ function ServicesPage() {
                 </div>
 
                 <h2 className="mt-3 text-2xl font-extrabold text-navy sm:text-3xl">
-                  Kitchen Equipment &amp; Refrigeration
+                  Kitchen Equipment Services
                 </h2>
 
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base max-w-2xl">
-                  Commercial refrigeration is our primary focus. We provide expert repair, troubleshooting,
+                  Commercial refrigeration and kitchen equipment is our core business operation. We provide expert repair, troubleshooting,
                   and preventive maintenance for commercial refrigerators, walk-in chillers, cold rooms, and
                   commercial kitchen lines across Qatar.
                 </p>

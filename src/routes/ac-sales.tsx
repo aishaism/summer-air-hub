@@ -15,6 +15,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { PageHero } from "@/components/site/PageHero";
 import { brandLogoMap } from "@/components/site/BrandLogos";
 import { site, waLink } from "@/lib/site";
 
@@ -176,106 +177,62 @@ ${notes ? `- Additional Notes: ${notes}` : ""}`;
       <Header />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-brand-soft border-b border-border/80">
-          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-            <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
-              <div className="lg:col-span-7">
-                <nav
-                  aria-label="Breadcrumb"
-                  className="mb-4 flex items-center gap-2 text-sm font-medium"
-                >
-                  <Link to="/" className="text-primary transition-colors hover:underline">
-                    Home
-                  </Link>
-                  <ChevronRight className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-                  <span className="text-primary">AC Sales</span>
-                </nav>
+        {/* Uniform Hero Section */}
+        <PageHero
+          badge={{
+            text: "Authorized AC Supply & Installation in Qatar",
+            icon: Sparkles,
+          }}
+          title="New AC Sales"
+          description="Genuine ACs from leading brands at competitive prices in Qatar. Complete equipment supply, manufacturer warranty, and certified installation across Qatar."
+          breadcrumb={[
+            { label: "Home", href: "/" },
+            { label: "AC Sales" },
+          ]}
+          actions={
+            <>
+              <button
+                type="button"
+                onClick={scrollToQuote}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
+              >
+                <span>Get a Quote</span>
+                <ArrowRight className="h-4 w-4" />
+              </button>
 
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  <span>Authorized AC Supply &amp; Installation in Qatar</span>
-                </div>
-
-                <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-navy sm:text-5xl">
-                  NEW AC SALES
-                </h1>
-
-                <p className="mt-4 max-w-2xl text-lg font-medium text-navy/90 sm:text-xl">
-                  Genuine ACs from leading brands at competitive prices in Qatar.
-                </p>
-
-                <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  Whether you are upgrading your home, fitting out a new villa, or supplying a
-                  commercial project, Summer Tech provides complete AC equipment supply, genuine
-                  manufacturer warranty, and professional commissioning across Qatar.
-                </p>
-
-                {/* Primary Action Buttons */}
-                <div className="mt-8 flex flex-wrap items-center gap-3.5">
-                  <button
-                    type="button"
-                    onClick={scrollToQuote}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow"
-                  >
-                    <span>Get a Quote</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-
-                  <WhatsAppButton
-                    href={waLink(
-                      "Hello Summer Tech, I would like to inquire about purchasing a new AC in Qatar.",
-                    )}
-                    size="md"
-                  >
-                    WhatsApp Us
-                  </WhatsAppButton>
-                </div>
-
-                <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-muted-foreground">
-                  <div className="flex items-center gap-1.5">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span>Free Consultations</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span>Official Distributor Warranty</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span>Fast Delivery Across Qatar</span>
-                  </div>
-                </div>
+              <WhatsAppButton
+                href={waLink(
+                  "Hello Summer Tech, I would like to inquire about purchasing a new AC in Qatar.",
+                )}
+                size="md"
+              >
+                WhatsApp Us
+              </WhatsAppButton>
+            </>
+          }
+          extra={
+            <div className="flex flex-wrap items-center gap-5 text-xs text-muted-foreground pt-2">
+              <div className="flex items-center gap-1.5">
+                <Check className="h-4 w-4 text-primary" />
+                <span>Free Consultations</span>
               </div>
-
-              <div className="lg:col-span-5">
-                <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-card p-2 shadow-md">
-                  <div className="relative overflow-hidden rounded-xl bg-muted">
-                    <img
-                      src={acSalesHero}
-                      alt="New modern Split Air Conditioner unit"
-                      className="h-64 sm:h-80 lg:h-96 w-full object-cover object-[center_35%]"
-                    />
-                    <div className="absolute top-3 left-3 rounded-md bg-navy/85 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-xs shadow-sm">
-                      <span className="text-primary font-bold mr-1.5">●</span>Brand New Units
-                    </div>
-                  </div>
-                  <div className="mt-2 rounded-xl bg-navy p-3.5 sm:p-4 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                      Summer Tech Sales
-                    </p>
-                    <p className="text-sm font-bold">
-                      Residential &amp; Commercial Air Conditioners
-                    </p>
-                    <p className="mt-0.5 text-xs text-white/80">
-                      Delivered &amp; Installed by Certified Technicians across Qatar
-                    </p>
-                  </div>
-                </div>
+              <div className="flex items-center gap-1.5">
+                <Check className="h-4 w-4 text-primary" />
+                <span>Official Warranty</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Check className="h-4 w-4 text-primary" />
+                <span>Fast Delivery Across Qatar</span>
               </div>
             </div>
-          </div>
-        </section>
+          }
+          image={{
+            src: acSalesHero,
+            alt: "New modern Split Air Conditioner unit",
+            badgeText: "Residential & Commercial AC Supply in Qatar",
+            badgeSubtext: "100% Genuine Brands",
+          }}
+        />
 
         {/* Brands We Supply & Service */}
         <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16">

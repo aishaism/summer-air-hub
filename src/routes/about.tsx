@@ -14,8 +14,8 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { WhatsAppIcon } from "@/components/site/icons";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { PageHero } from "@/components/site/PageHero";
 import { waLink } from "@/lib/site";
 
 import heroTechnician from "@/assets/hero-technician.jpg";
@@ -108,28 +108,45 @@ function AboutPage() {
       <Header />
 
       <main className="flex-1">
-        {/* Page Title & Breadcrumb Header */}
-        <section className="mx-auto w-full max-w-7xl px-4 pt-8 pb-4 sm:px-6 sm:pt-10">
-          <h1 className="text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">About Us</h1>
-          <nav aria-label="Breadcrumb" className="mt-2 flex items-center gap-2 text-sm font-medium">
-            <Link to="/" className="text-primary transition-colors hover:underline">
-              Home
-            </Link>
-            <ChevronRight className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-            <span className="text-primary">About Us</span>
-          </nav>
-        </section>
+        {/* Uniform Hero */}
+        <PageHero
+          title="About Us"
+          description="Summer Tech Maintenance Solutions W.L.L. is Qatar's trusted AC & HVAC company in Doha, delivering dependable residential and commercial cooling solutions."
+          breadcrumb={[
+            { label: "Home", href: "/" },
+            { label: "About Us" },
+          ]}
+          actions={
+            <>
+              <WhatsAppButton href={requestLink} size="md">
+                Contact Our Team
+              </WhatsAppButton>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-background px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-brand-soft"
+              >
+                Explore Services
+              </Link>
+            </>
+          }
+          image={{
+            src: heroTechnician,
+            alt: "Summer Tech HVAC technician performing AC maintenance in Qatar",
+            badgeText: "Delivering Reliable Cooling in Qatar",
+            badgeSubtext: "About Summer Tech",
+          }}
+        />
 
-        {/* Company Introduction Hero */}
-        <section className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-12">
+        {/* Company Overview & Mission */}
+        <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3.5 py-1.5 text-xs font-bold text-primary">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3.5 py-1.5 text-xs font-bold text-primary border border-primary/20">
                 <Sparkles className="h-3.5 w-3.5" />
                 AC &amp; HVAC Specialists in Qatar
               </span>
 
-              <h2 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-navy sm:text-4xl">
+              <h2 className="mt-4 text-2xl font-extrabold leading-tight tracking-tight text-navy sm:text-3xl lg:text-4xl">
                 Delivering Reliable Cooling When You Need It Most
               </h2>
 
@@ -163,37 +180,16 @@ function AboutPage() {
                   </div>
                 ))}
               </div>
-
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <WhatsAppButton href={requestLink} size="md">
-                  Contact Our Team on WhatsApp
-                </WhatsAppButton>
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-background px-6 py-3.5 text-sm font-semibold text-navy transition-colors hover:bg-muted"
-                >
-                  Explore Services
-                </Link>
-              </div>
             </div>
 
             <div className="relative lg:col-span-5">
               <div className="overflow-hidden rounded-2xl border border-border shadow-md">
                 <img
-                  src={heroTechnician}
-                  alt="Summer Tech HVAC technician performing AC maintenance in Qatar"
-                  width={900}
-                  height={684}
-                  className="h-72 w-full object-cover sm:h-96"
-                />
-              </div>
-              <div className="mt-4 overflow-hidden rounded-xl border border-border shadow-sm">
-                <img
                   src={servicesHero}
                   alt="Commercial ceiling cassette AC maintenance"
                   width={900}
-                  height={400}
-                  className="h-36 w-full object-cover sm:h-44"
+                  height={500}
+                  className="h-64 w-full object-cover sm:h-80 lg:h-[320px]"
                 />
               </div>
             </div>

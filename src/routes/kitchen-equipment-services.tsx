@@ -16,6 +16,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppIcon } from "@/components/site/icons";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { PageHero } from "@/components/site/PageHero";
 import { waLink } from "@/lib/site";
 
 import commercialRefrigerationImg from "@/assets/commercial-refrigeration.jpg";
@@ -164,109 +165,66 @@ function KitchenEquipmentServicesPage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
-        {/* HERO SECTION */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-brand-soft via-brand-soft/60 to-background border-b border-border/60">
-          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:py-20">
-            <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
-              {/* Left Column: Heading & Content */}
-              <div className="lg:col-span-7">
-                {/* Breadcrumb */}
-                <nav
-                  aria-label="Breadcrumb"
-                  className="mb-4 flex items-center gap-1.5 text-xs font-medium sm:text-sm"
-                >
-                  <Link to="/" className="text-primary hover:underline">
-                    Home
-                  </Link>
-                  <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
-                  <Link to="/services" className="text-primary hover:underline">
-                    Services
-                  </Link>
-                  <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
-                  <span className="text-navy font-semibold">Kitchen Equipment</span>
-                </nav>
-
-                {/* Core Operation Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3.5 py-1 text-xs font-semibold text-primary">
-                  <ThermometerSnowflake className="h-3.5 w-3.5 text-primary shrink-0" />
-                  <span>Core Business Operation • Commercial Refrigeration</span>
-                </div>
-
-                <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
-                  Kitchen Equipment Services
-                </h1>
-
-                <p className="mt-2 text-base font-semibold text-primary sm:text-lg">
-                  Commercial Kitchen &amp; Refrigeration Equipment Service in Qatar
-                </p>
-
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  Professional repair, troubleshooting and preventive maintenance for commercial
-                  refrigeration and kitchen equipment.
-                </p>
-
-                {/* CTA Buttons */}
-                <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
-                  <WhatsAppButton href={refrigeratorWaLink} size="md" className="rounded-xl shadow-sm">
-                    Request Refrigerator Service
-                  </WhatsAppButton>
-                  <a
-                    href="#commercial-refrigeration"
-                    className="inline-flex items-center gap-2 rounded-xl border border-navy/20 bg-card px-5 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-primary hover:bg-brand-soft"
-                  >
-                    View Refrigeration Services
-                    <ChevronRight className="h-4 w-4 text-primary" />
-                  </a>
-                </div>
-
-                {/* Quick Trust Badges */}
-                <div className="mt-8 grid grid-cols-2 gap-3 border-t border-border/80 pt-6 sm:grid-cols-3">
-                  <div className="flex items-center gap-2 text-xs font-medium text-navy">
-                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-                    <span>Certified Technicians</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-medium text-navy">
-                    <Clock className="h-4 w-4 text-primary shrink-0" />
-                    <span>Emergency Response</span>
-                  </div>
-                  <div className="col-span-2 sm:col-span-1 flex items-center gap-2 text-xs font-medium text-navy">
-                    <ShieldCheck className="h-4 w-4 text-primary shrink-0" />
-                    <span>Genuine Spare Parts</span>
-                  </div>
-                </div>
+        {/* Uniform Hero Section */}
+        <PageHero
+          badge={{
+            text: "Core Business Operation • Commercial Refrigeration",
+            icon: ThermometerSnowflake,
+          }}
+          title="Kitchen Equipment Services"
+          description={
+            <>
+              <span className="block font-semibold text-primary mb-1">
+                Commercial Kitchen &amp; Refrigeration Equipment Service in Qatar
+              </span>
+              <span>
+                Professional repair, troubleshooting and preventive maintenance for commercial
+                refrigerators, chillers, freezers, and cold rooms across Qatar.
+              </span>
+            </>
+          }
+          breadcrumb={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Kitchen Equipment Services" },
+          ]}
+          actions={
+            <>
+              <WhatsAppButton href={refrigeratorWaLink} size="md">
+                Request Refrigerator Service
+              </WhatsAppButton>
+              <a
+                href="#commercial-refrigeration"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-background px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-brand-soft"
+              >
+                <span>View Refrigeration Services</span>
+                <ChevronRight className="h-4 w-4" />
+              </a>
+            </>
+          }
+          extra={
+            <div className="flex flex-wrap items-center gap-5 text-xs text-muted-foreground pt-2">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                <span>Certified Technicians</span>
               </div>
-
-              {/* Right Column: Hero Visual */}
-              <div className="relative lg:col-span-5">
-                <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-card shadow-lg">
-                  <img
-                    src={commercialRefrigerationImg}
-                    alt="Technician servicing commercial refrigeration unit and walk-in chiller in restaurant kitchen"
-                    width={800}
-                    height={800}
-                    className="h-72 w-full object-cover sm:h-96 lg:h-[420px]"
-                  />
-                  {/* Overlay Badge */}
-                  <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/20 bg-navy/90 p-3.5 backdrop-blur-md text-white sm:bottom-4 sm:left-4 sm:right-4 sm:p-4">
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <p className="text-[11px] font-semibold uppercase tracking-wider text-primary">
-                          Main Business Focus
-                        </p>
-                        <p className="text-sm font-bold text-white sm:text-base">
-                          Commercial Refrigeration &amp; Chillers
-                        </p>
-                      </div>
-                      <span className="shrink-0 rounded-lg bg-primary/20 px-2.5 py-1 text-[11px] font-bold text-primary border border-primary/40">
-                        Qatar
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4 text-primary" />
+                <span>Emergency Response</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-primary" />
+                <span>Genuine Spare Parts</span>
               </div>
             </div>
-          </div>
-        </section>
+          }
+          image={{
+            src: commercialRefrigerationImg,
+            alt: "Technician servicing commercial refrigeration unit and walk-in chiller in restaurant kitchen",
+            badgeText: "Commercial Refrigeration & Chillers in Qatar",
+            badgeSubtext: "Main Business Focus",
+          }}
+        />
 
         {/* SECTION 1: MAIN FOCUS — COMMERCIAL REFRIGERATION (PRIMARY SERVICE CATEGORY) */}
         <section
