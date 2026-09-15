@@ -168,7 +168,7 @@ function KitchenEquipmentServicesPage() {
         {/* Uniform Hero Section */}
         <PageHero
           badge={{
-            text: "Core Business Operation • Commercial Refrigeration",
+            text: "Commercial Kitchen & Refrigeration Services • Qatar",
             icon: ThermometerSnowflake,
           }}
           title="Kitchen Equipment Services"
