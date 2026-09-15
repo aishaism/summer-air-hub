@@ -43,8 +43,8 @@ export function PageHero({
   image,
 }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden border-b border-border/70 bg-gradient-to-b from-brand-soft via-brand-soft/70 to-background">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:py-14">
+    <section className="relative overflow-hidden border-b border-border/70 bg-brand-soft">
+      <div className="mx-auto max-w-7xl px-4 pt-8 pb-5 sm:px-6 sm:pt-10 sm:pb-6 lg:pt-12 lg:pb-7">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
           {/* Left Column: Title, Description, Breadcrumb, Actions */}
           <div className="lg:col-span-7">

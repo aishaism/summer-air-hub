@@ -81,20 +81,37 @@ function ContactPage() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!fullName.trim() || !mobileNumber.trim()) return;
-    setSubmitted(true);
+  const getWhatsAppMessage = () => {
+    const lines = [
+      "Hello Summer Tech,",
+      "I would like to request a service.",
+      "",
+      `Name: ${fullName.trim()}`,
+      `Mobile: ${mobileNumber.trim()}`,
+      `Service Required: ${selectedService.trim()}`,
+      `Message: ${message.trim() || "Not provided"}`,
+      "",
+      "Please contact me regarding this enquiry.",
+    ];
+    return lines.join("\n");
   };
 
   const getCustomWaLink = () => {
-    const text = `Hello Summer Tech,
-I would like to request a service:
-- Name: ${fullName || "Customer"}
-- Mobile: ${mobileNumber || "Not provided"}
-- Service Required: ${selectedService}
-${message ? `- Notes: ${message}` : ""}`;
-    return waLink(text);
+    return waLink(getWhatsAppMessage());
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!fullName.trim() || !mobileNumber.trim() || !selectedService.trim()) {
+      return;
+    }
+    const targetUrl = getCustomWaLink();
+    setSubmitted(true);
+
+    const win = window.open(targetUrl, "_blank", "noopener,noreferrer");
+    if (!win || win.closed || typeof win.closed === "undefined") {
+      window.location.href = targetUrl;
+    }
   };
 
   return (
@@ -300,6 +317,7 @@ ${message ? `- Notes: ${message}` : ""}`;
                     <div className="relative mt-2">
                       <select
                         id="serviceRequired"
+                        required
                         value={selectedService}
                         onChange={(e) => setSelectedService(e.target.value)}
                         className="w-full appearance-none rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground shadow-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
